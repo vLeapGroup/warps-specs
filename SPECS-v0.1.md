@@ -1,6 +1,8 @@
 # MultiversX Warps: Share Transactions via Links
 
-Warps are specification-compliant APIs that provide all necessary information to present and construct signable transactions compatible with the MultiversX blockchain. Warps can be shared through any medium capable of encoding or displaying URLs, including web platforms, QR codes, NFC tags, etc.
+Warps are on-chain data structures that provide all necessary information to construct complex UIs for generating transactions on the MultiversX blockchain. By sending a Warp to a friend or customer, they can easily access a generated UI to execute the intended transaction, such as swaps, delegating eGold, or other smart contract interactions.
+
+Warps can be shared through any medium capable of encoding or displaying URLs, including web platforms, QR codes, NFC tags, etc.
 
 **This is the first version of the specification, primarily aimed at experimentation and feedback collection.**
 
@@ -58,17 +60,17 @@ type WarpActionInput = {
 
 ### Clients
 
-Any client application may accept encoded Warp identifiers or aliases through a query parameter `warp-to`.
+Any client application may accept encoded Warp identifiers or aliases through a query parameter `mvx-warp`.
 
 Clients fetch Warp information from the blockchain and generate a UI with actions based on the parameters. When a user clicks an action, the client reacts based on the Action Type. For transactions, it constructs the transaction based on defined parameters and prompts the user to sign and broadcast it to the blockchain network.
 
-A simple default client will be provided as part of the development of this protocol / standard. For example: `https://tobeannounced.com?warp-to=<your-warp-id>`
+A simple default client will be provided as part of the development of this protocol / standard. For example: `https://tobeannounced.com?mvx-warp=<your-warp-id>`
 
 ![Warp UI Demo](./assets/warp-ui-demo.png)
 
 But Warps may be easily integrated into other clients like wallets too:
 
-- [xPortal](https://xportal.com): e.g. accept `https://xportal.com?warp-to=delegate` to display a UI in-app
+- [xPortal](https://xportal.com): e.g. accept `https://xportal.com?mvx-warp=delegate` to display a UI in-app
 - [Multiversᕽ Browser Extension](https://xportal.com): e.g. to unwrap Warp links shared on X.com and inject a generate UI with on-chain actions directly within Posts
 
 ### SDKs
