@@ -25,6 +25,7 @@ type WarpContractAction = {
   type: 'contract'
   label: string
   description: string | null
+  inputs: WarpActionInput[]
   address: string
   func: string | null
   args: any[]
@@ -35,6 +36,18 @@ type WarpLinkAction = {
   label: string
   description: string | null
   url: string
+}
+
+type WarpActionInput = {
+  type: 'text' | 'number' | 'toggle' | 'select' | 'esdt' | 'nft' | 'herotag'
+  label: string
+  description: string | null
+  inputs: WarpActionInput[]
+  required?: boolean
+  placeholder?: string
+  min?: number // min length for text or min value for number
+  max?: number // max length for text or max value for number
+  argPosition: number // determines the position of the input value in the smart contract function call
 }
 ```
 
