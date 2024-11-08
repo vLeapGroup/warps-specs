@@ -12,46 +12,9 @@ A Warp is a base64-encoded JSON object in a standardized format stored within th
 
 Inscribing the Warp on the blockchain ensures its actions cannot be modified after sharing, providing security and immutability.
 
-### Warp Structure
+### Warp Schema
 
-```typescript
-type Warp = {
-  title: string
-  description: string | null
-  actions: WarpAction[]
-}
-
-type WarpAction = WarpContractAction | WarpLinkAction
-
-type WarpContractAction = {
-  type: 'contract'
-  label: string
-  description: string | null
-  inputs: WarpActionInput[]
-  address: string
-  func: string | null
-  args: any[]
-}
-
-type WarpLinkAction = {
-  type: 'link'
-  label: string
-  description: string | null
-  url: string
-}
-
-type WarpActionInput = {
-  type: 'text' | 'number' | 'toggle' | 'select' | 'esdt' | 'nft' | 'herotag'
-  label: string
-  description: string | null
-  inputs: WarpActionInput[]
-  required?: boolean
-  placeholder?: string
-  min?: number // min length for text or min value for number
-  max?: number // max length for text or max value for number
-  argPosition: number // determines the position of the input value in the smart contract function call
-}
-```
+Find the JSON schemas in the [schemas](./schemas/) directory.
 
 ### Action Types
 
@@ -60,26 +23,23 @@ type WarpActionInput = {
 
 ### Clients
 
-Any client application may accept encoded Warp identifiers or aliases through a query parameter `mvx-warp`.
+Any client application may accept encoded Warp identifiers or aliases through a query parameter `xwarp`.
 
 Clients fetch Warp information from the blockchain and generate a UI with actions based on the parameters. When a user clicks an action, the client reacts based on the Action Type. For transactions, it constructs the transaction based on defined parameters and prompts the user to sign and broadcast it to the blockchain network.
 
-A simple default client will be provided as part of the development of this protocol / standard. For example: `https://tobeannounced.com?mvx-warp=<your-warp-id>`
-
-![Warp UI Demo](./assets/warp-ui-demo.png)
+A simple default client will be provided as part of the development of this protocol / standard. For example: `https://xwarp.me?xwarp=<your-warp-id>`
 
 But Warps may be easily integrated into other clients like wallets too:
 
-- [xPortal](https://xportal.com): e.g. accept `https://xportal.com?mvx-warp=delegate` to display a UI in-app
+- [xPortal](https://xportal.com): e.g. accept `https://xportal.com?xwarp=delegate` to display a UI in-app
 - [Multiversᕽ Browser Extension](https://xportal.com): e.g. to unwrap Warp links shared on X.com and inject a generate UI with on-chain actions directly within Posts
 
 ### SDKs
 
 SDKs for different languages and frameworks will be provided to facilitate the integration of Warps in various clients seamlessly.
 
-- TypeScript: (todo)
-- React: (todo)
-- React Native: (todo)
+- TypeScript: [GitHub](https://github.com/vLeapGroup/warps-sdk-js/tree/main/packages/core) | [NPM](#)
+- React: [GitHub](https://github.com/vLeapGroup/warps-sdk-js/tree/main/packages/react) | [NPM](#)
 
 ### The Registry
 
