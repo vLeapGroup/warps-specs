@@ -1,0 +1,141 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Warp Protocol Schema",
+  "description": "Generic schema for defining actions and metadata for blockchain transactions.",
+  "type": "object",
+  "properties": {
+    "protocol": {
+      "type": "string",
+      "title": "Protocol Identifier",
+      "description": "Specifies the protocol version and identifier, e.g., 'warp:0.1.0'."
+    },
+    "name": {
+      "type": "string",
+      "title": "Warp Name",
+      "description": "A name for the warp."
+    },
+    "title": {
+      "type": "string",
+      "title": "Warp Title",
+      "description": "A brief title describing the warp."
+    },
+    "description": {
+      "type": "string",
+      "title": "Warp Description",
+      "description": "A detailed description of the warp's purpose."
+    },
+    "preview": {
+      "type": "string",
+      "title": "Preview Image URL",
+      "description": "A URL to a preview image for the warp."
+    },
+    "actions": {
+      "type": "array",
+      "title": "Actions",
+      "description": "A list of actions involved in the warp.",
+      "items": {
+        "oneOf": [
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "const": "contract",
+                "title": "Action Type",
+                "description": "Specifies the action type as a contract."
+              },
+              "label": {
+                "type": "string",
+                "title": "Action Label",
+                "description": "A label for the action, e.g., 'Transfer Funds'."
+              },
+              "description": {
+                "type": "string",
+                "title": "Action Description",
+                "description": "A description of what the contract action does."
+              },
+              "inputs": {
+                "type": "array",
+                "title": "Inputs",
+                "description": "A list of inputs required for the contract action.",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string",
+                      "title": "Input Type",
+                      "description": "The type of input, e.g., 'query' or 'text'."
+                    },
+                    "name": {
+                      "type": "string",
+                      "title": "Input Name",
+                      "description": "The name of the input field."
+                    },
+                    "argPosition": {
+                      "type": "integer",
+                      "title": "Argument Position",
+                      "description": "The position of the input in the function call."
+                    }
+                  },
+                  "required": ["type", "name", "argPosition"]
+                }
+              },
+              "address": {
+                "type": "string",
+                "title": "Contract Address",
+                "description": "The blockchain address involved in the contract action."
+              },
+              "func": {
+                "type": "string",
+                "title": "Function Name",
+                "description": "The name of the function to call in the contract."
+              },
+              "args": {
+                "type": "array",
+                "title": "Arguments",
+                "description": "A list of arguments for the contract function call.",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "type",
+              "label",
+              "description",
+              "address",
+              "func",
+              "args"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "const": "link",
+                "title": "Action Type",
+                "description": "Specifies the action type as a link."
+              },
+              "label": {
+                "type": "string",
+                "title": "Action Label",
+                "description": "A label for the link action."
+              },
+              "description": {
+                "type": "string",
+                "title": "Action Description",
+                "description": "A description of what the link action does."
+              },
+              "url": {
+                "type": "string",
+                "title": "Link URL",
+                "description": "The URL for additional information or actions."
+              }
+            },
+            "required": ["type", "label", "description", "url"]
+          }
+        ]
+      }
+    }
+  },
+  "required": ["protocol", "name", "title", "description", "preview", "actions"]
+}
