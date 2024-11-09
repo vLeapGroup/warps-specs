@@ -96,6 +96,11 @@
                 "items": {
                   "type": "string"
                 }
+              },
+              "gasLimit": {
+                "type": "number",
+                "title": "Minimum Gas Limit",
+                "description": "The minimum gas limit for the contract function call."
               }
             },
             "required": [
