@@ -20,7 +20,7 @@
       "description": "A brief title describing the warp."
     },
     "description": {
-      "type": "string",
+      "type": ["string", "null"],
       "title": "Warp Description",
       "description": "A detailed description of the warp's purpose."
     },
@@ -49,35 +49,9 @@
                 "description": "A label for the action, e.g., 'Transfer Funds'."
               },
               "description": {
-                "type": "string",
+                "type": ["string", "null"],
                 "title": "Action Description",
                 "description": "A description of what the contract action does."
-              },
-              "inputs": {
-                "type": "array",
-                "title": "Inputs",
-                "description": "A list of inputs required for the contract action.",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "type": {
-                      "type": "string",
-                      "title": "Input Type",
-                      "description": "The type of input, e.g., 'query' or 'text'."
-                    },
-                    "name": {
-                      "type": "string",
-                      "title": "Input Name",
-                      "description": "The name of the input field."
-                    },
-                    "argPosition": {
-                      "type": "integer",
-                      "title": "Argument Position",
-                      "description": "The position of the input in the function call."
-                    }
-                  },
-                  "required": ["type", "name", "argPosition"]
-                }
               },
               "address": {
                 "type": "string",
@@ -85,7 +59,7 @@
                 "description": "The blockchain address involved in the contract action."
               },
               "func": {
-                "type": "string",
+                "type": ["string", "null"],
                 "title": "Function Name",
                 "description": "The name of the function to call in the contract."
               },
@@ -101,6 +75,50 @@
                 "type": "number",
                 "title": "Minimum Gas Limit",
                 "description": "The minimum gas limit for the contract function call."
+              },
+              "value": {
+                "type": "string",
+                "title": "Value",
+                "description": "The value to be sent with the contract call."
+              },
+              "inputs": {
+                "type": "array",
+                "title": "Inputs",
+                "description": "A list of inputs required for the contract action.",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "title": "Input Name",
+                      "description": "The name of the input field."
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "text",
+                        "number",
+                        "bigint",
+                        "boolean",
+                        "address"
+                      ],
+                      "title": "Input Type",
+                      "description": "The type of input."
+                    },
+                    "position": {
+                      "type": "string",
+                      "title": "Position",
+                      "description": "The position of the input in the function call."
+                    },
+                    "source": {
+                      "type": "string",
+                      "enum": ["field", "query"],
+                      "title": "Input Source",
+                      "description": "The source of the input."
+                    }
+                  },
+                  "required": ["name", "type", "position", "source"]
+                }
               }
             },
             "required": [
@@ -109,7 +127,8 @@
               "description",
               "address",
               "func",
-              "args"
+              "args",
+              "gasLimit"
             ]
           },
           {
@@ -126,7 +145,7 @@
                 "description": "A label for the link action."
               },
               "description": {
-                "type": "string",
+                "type": ["string", "null"],
                 "title": "Action Description",
                 "description": "A description of what the link action does."
               },
@@ -134,6 +153,45 @@
                 "type": "string",
                 "title": "Link URL",
                 "description": "The URL for additional information or actions."
+              },
+              "inputs": {
+                "type": "array",
+                "title": "Inputs",
+                "description": "A list of inputs for the link action.",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "title": "Input Name",
+                      "description": "The name of the input field."
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "text",
+                        "number",
+                        "bigint",
+                        "boolean",
+                        "address"
+                      ],
+                      "title": "Input Type",
+                      "description": "The type of input."
+                    },
+                    "position": {
+                      "type": "string",
+                      "title": "Position",
+                      "description": "The position of the input."
+                    },
+                    "source": {
+                      "type": "string",
+                      "enum": ["field", "query"],
+                      "title": "Input Source",
+                      "description": "The source of the input."
+                    }
+                  },
+                  "required": ["name", "type", "position", "source"]
+                }
               }
             },
             "required": ["type", "label", "description", "url"]
