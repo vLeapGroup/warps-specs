@@ -1,0 +1,32 @@
+{
+  "protocol": "warp:0.1.0",
+  "name": "Delegate Egld",
+  "title": "Ready to stake EGLD with us?",
+  "description": "Stake with us to enable extra benefits across all our platforms.",
+  "preview": "https://cdn.prod.website-files.com/6597cc7be68d63ec0c8ce33f/660441460ae47e18853dd348_staking-v4.webp",
+  "actions": [
+    {
+      "type": "contract",
+      "label": "Stake now",
+      "description": "Stake eGold with our staking agency.",
+      "address": "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqallllls5rqmaf",
+      "func": "delegate",
+      "args": [],
+      "gasLimit": 10000000,
+      "inputs": [
+        {
+          "name": "value",
+          "type": "bigint",
+          "position": "value",
+          "source": "field"
+        }
+      ]
+    },
+    {
+      "type": "link",
+      "label": "Learn more",
+      "description": "Find more information about staking eGold.",
+      "url": "https://multiversx.com/egld"
+    }
+  ]
+}
