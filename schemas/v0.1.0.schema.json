@@ -77,7 +77,7 @@
                 "description": "The minimum gas limit for the contract function call."
               },
               "value": {
-                "type": "string",
+                "type": ["string", "null"],
                 "title": "Value",
                 "description": "The value to be sent with the contract call."
               },
@@ -92,6 +92,11 @@
                       "type": "string",
                       "title": "Input Name",
                       "description": "The name of the input field."
+                    },
+                    "description": {
+                      "type": ["string", "null"],
+                      "title": "Input Description",
+                      "description": "A description of the input field."
                     },
                     "type": {
                       "type": "string",
@@ -115,21 +120,28 @@
                       "enum": ["field", "query"],
                       "title": "Input Source",
                       "description": "The source of the input."
+                    },
+                    "required": {
+                      "type": "boolean",
+                      "title": "Is Required",
+                      "description": "Indicates if the input is required."
+                    },
+                    "min": {
+                      "type": "number",
+                      "title": "Minimum Value",
+                      "description": "The minimum value for the input."
+                    },
+                    "max": {
+                      "type": "number",
+                      "title": "Maximum Value",
+                      "description": "The maximum value for the input."
                     }
                   },
                   "required": ["name", "type", "position", "source"]
                 }
               }
             },
-            "required": [
-              "type",
-              "label",
-              "description",
-              "address",
-              "func",
-              "args",
-              "gasLimit"
-            ]
+            "required": ["type", "label", "address", "func", "args", "gasLimit"]
           },
           {
             "type": "object",
@@ -166,6 +178,11 @@
                       "title": "Input Name",
                       "description": "The name of the input field."
                     },
+                    "description": {
+                      "type": ["string", "null"],
+                      "title": "Input Description",
+                      "description": "A description of the input field."
+                    },
                     "type": {
                       "type": "string",
                       "enum": [
@@ -188,13 +205,28 @@
                       "enum": ["field", "query"],
                       "title": "Input Source",
                       "description": "The source of the input."
+                    },
+                    "required": {
+                      "type": "boolean",
+                      "title": "Is Required",
+                      "description": "Indicates if the input is required."
+                    },
+                    "min": {
+                      "type": "number",
+                      "title": "Minimum Value",
+                      "description": "The minimum value for the input."
+                    },
+                    "max": {
+                      "type": "number",
+                      "title": "Maximum Value",
+                      "description": "The maximum value for the input."
                     }
                   },
                   "required": ["name", "type", "position", "source"]
                 }
               }
             },
-            "required": ["type", "label", "description", "url"]
+            "required": ["type", "label", "url"]
           }
         ]
       }
