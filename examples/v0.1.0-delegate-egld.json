@@ -16,9 +16,11 @@
       "inputs": [
         {
           "name": "value",
+          "description": "Amount of eGold to delegate.",
           "type": "bigint",
           "position": "value",
-          "source": "field"
+          "source": "field",
+          "required": true
         }
       ]
     },
