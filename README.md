@@ -28,7 +28,7 @@ Client applications can accept encoded Warp identifiers or aliases through the q
 ## Identifier Prefixes
 
 - **`alias:`** - Use this prefix for alias identifiers.
-- **`hash:`** - Use this prefix for hash identifiers.
+- **`hash:`** - Use this prefix for transaction hash identifiers.
 - **No Prefix** - Defaults to `alias:` if no prefix is specified.
 
 ## Examples
