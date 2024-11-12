@@ -23,7 +23,21 @@ Find the JSON schemas in the [schemas](./schemas/) directory.
 
 ### Clients
 
-Any client application may accept encoded Warp identifiers or aliases through a query parameter `xwarp`.
+Client applications can accept encoded Warp identifiers or aliases through the query parameter `xwarp`. The urlencoded value of the `xwarp` parameter is typically prefixed with the identifier type (`alias:`, `hash:`), defaulting to `alias:` if no type is specified.
+
+## Identifier Prefixes
+
+- **`alias:`** - Use this prefix for alias identifiers.
+- **`hash:`** - Use this prefix for hash identifiers.
+- **No Prefix** - Defaults to `alias:` if no prefix is specified.
+
+## Examples
+
+- **Using `hash` prefix**: `https://yoursite.com?xwarp=hash%3Ad08a405f6d11b5506889bf6cd822fec2a8ef826c170fd1920ff5241f3883adb9`
+
+- **Using `alias` prefix**: `https://yoursite.com?xwarp=alias%3Amyalia`
+
+- **No prefix (defaults to `alias`)**: `https://yoursite.com?xwarp=myalias`
 
 Clients fetch Warp information from the blockchain and generate a UI with actions based on the parameters. When a user clicks an action, the client reacts based on the Action Type. For transactions, it constructs the transaction based on defined parameters and prompts the user to sign and broadcast it to the blockchain network.
 
