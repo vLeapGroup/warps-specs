@@ -52,8 +52,8 @@ But Warps may be easily integrated into other clients like wallets too:
 
 SDKs for different languages and frameworks will be provided to facilitate the integration of Warps in various clients seamlessly.
 
-- TypeScript: [GitHub](https://github.com/vLeapGroup/warps-sdk-js/tree/main/packages/core) | [NPM](#)
-- React: [GitHub](https://github.com/vLeapGroup/warps-sdk-js/tree/main/packages/react) | [NPM](#)
+- TypeScript: [GitHub](https://github.com/vLeapGroup/warps-sdk-js/tree/main/packages/core) | [NPM](https://www.npmjs.com/package/@vleap/warps)
+- React: [GitHub](https://github.com/vLeapGroup/warps-sdk-js/tree/main/packages/react) | [NPM](https://www.npmjs.com/package/@vleap/warps-react)
 
 ### The Registry
 
