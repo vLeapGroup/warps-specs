@@ -46,7 +46,7 @@ A simple default client will be provided as part of the development of this prot
 But Warps may be easily integrated into other clients like wallets too:
 
 - [xPortal](https://xportal.com): e.g. accept `https://xportal.com?xwarp=delegate` to display a UI in-app
-- [Multiversᕽ Browser Extension](https://xportal.com): e.g. to unwrap Warp links shared on X.com and inject a generate UI with on-chain actions directly within Posts
+- [Multiversᕽ Browser Extension](https://chromewebstore.google.com/detail/multiversx-wallet/dngmlblcodfobpdpecaadgfbcggfjfnm): e.g. to unwrap Warp links shared on X.com and inject a generate UI with on-chain actions directly within Posts
 
 ### SDKs
 
