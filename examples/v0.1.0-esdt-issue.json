@@ -1,0 +1,60 @@
+{
+  "protocol": "warp:0.1.0",
+  "name": "ESDT Creator",
+  "title": "Create a fungible token (ESDT).",
+  "description": "The fungible token will be created on the Multiversᕽ blockchain.",
+  "preview": "https://docs.multiversx.com/img/social.jpg",
+  "actions": [
+    {
+      "type": "contract",
+      "label": "Create now",
+      "address": "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzllls8a5w6u",
+      "func": "issue",
+      "args": [],
+      "gasLimit": 60000000,
+      "inputs": [
+        {
+          "name": "val",
+          "type": "bigint",
+          "position": "value",
+          "source": "query",
+          "required": true
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "position": "arg:1",
+          "source": "field",
+          "required": true
+        },
+        {
+          "name": "ticker",
+          "type": "string",
+          "position": "arg:2",
+          "source": "field",
+          "required": true
+        },
+        {
+          "name": "supply",
+          "type": "bigint",
+          "position": "arg:3",
+          "source": "field",
+          "required": true
+        },
+        {
+          "name": "decimals",
+          "type": "uint8",
+          "position": "arg:4",
+          "source": "field",
+          "required": true
+        }
+      ]
+    },
+    {
+      "type": "link",
+      "label": "Read docs",
+      "description": "Find more information about ESDT.",
+      "url": "https://docs.multiversx.com/tokens/fungible-tokens"
+    }
+  ]
+}
