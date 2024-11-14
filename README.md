@@ -4,8 +4,6 @@ Warps are on-chain data structures that provide all necessary information to con
 
 Warps can be shared through any medium capable of encoding or displaying URLs, including web platforms, QR codes, NFC tags, etc.
 
-**This is the first version of the specification, primarily aimed at experimentation and feedback collection.**
-
 ## Specification
 
 A Warp is a base64-encoded JSON object in a standardized format stored within the `txData` of a transaction executed on the MultiversX network. The hash of this transaction serves as the unique identifier of the Warp. The [Registry](#the-registry) can be used to assign aliases to Warps for more user-friendly link sharing.
