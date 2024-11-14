@@ -21,28 +21,28 @@
           "required": true
         },
         {
-          "name": "name",
+          "name": "Token Name",
           "type": "string",
           "position": "arg:1",
           "source": "field",
           "required": true
         },
         {
-          "name": "ticker",
+          "name": "Token Ticker",
           "type": "string",
           "position": "arg:2",
           "source": "field",
           "required": true
         },
         {
-          "name": "supply",
+          "name": "Initial Supply",
           "type": "bigint",
           "position": "arg:3",
           "source": "field",
           "required": true
         },
         {
-          "name": "decimals",
+          "name": "Token Decimals",
           "type": "uint8",
           "position": "arg:4",
           "source": "field",
