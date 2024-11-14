@@ -101,11 +101,16 @@
                     "type": {
                       "type": "string",
                       "enum": [
-                        "text",
-                        "number",
+                        "string",
+                        "uint8",
+                        "uint16",
+                        "uint32",
+                        "uint64",
+                        "biguint",
                         "bigint",
                         "boolean",
-                        "address"
+                        "address",
+                        "hex"
                       ],
                       "title": "Input Type",
                       "description": "The type of input."
@@ -113,7 +118,20 @@
                     "position": {
                       "type": "string",
                       "title": "Position",
-                      "description": "The position of the input in the function call."
+                      "description": "The position of the input in the function call.",
+                      "enum": [
+                        "value",
+                        "arg:1",
+                        "arg:2",
+                        "arg:3",
+                        "arg:4",
+                        "arg:5",
+                        "arg:6",
+                        "arg:7",
+                        "arg:8",
+                        "arg:9",
+                        "arg:10"
+                      ]
                     },
                     "source": {
                       "type": "string",
@@ -186,11 +204,16 @@
                     "type": {
                       "type": "string",
                       "enum": [
-                        "text",
-                        "number",
+                        "string",
+                        "uint8",
+                        "uint16",
+                        "uint32",
+                        "uint64",
+                        "biguint",
                         "bigint",
                         "boolean",
-                        "address"
+                        "address",
+                        "hex"
                       ],
                       "title": "Input Type",
                       "description": "The type of input."
@@ -198,7 +221,20 @@
                     "position": {
                       "type": "string",
                       "title": "Position",
-                      "description": "The position of the input."
+                      "description": "The position of the input.",
+                      "enum": [
+                        "value",
+                        "arg:1",
+                        "arg:2",
+                        "arg:3",
+                        "arg:4",
+                        "arg:5",
+                        "arg:6",
+                        "arg:7",
+                        "arg:8",
+                        "arg:9",
+                        "arg:10"
+                      ]
                     },
                     "source": {
                       "type": "string",
