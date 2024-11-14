@@ -39,7 +39,7 @@ Client applications can accept encoded Warp identifiers or aliases through the q
 
 With the identifier information, clients then fetch Warp information from the blockchain and generate a UI with actions based on the parameters. When a user clicks an action, the client reacts based on the Action Type. For transactions, it constructs the transaction based on defined parameters and prompts the user to sign and broadcast it to the blockchain network.
 
-A simple default client will be provided as part of the development of this protocol / standard. For example: `https://xwarp.me?xwarp=<your-warp-id>`
+A simple default client will be provided as part of the development of this protocol / standard. For example: `https://xwarp.me/to?xwarp=<your-warp-id>`
 
 But Warps may be easily integrated into other clients like wallets too:
 
