@@ -17,7 +17,7 @@ Find the JSON schemas in the [schemas](./schemas/) directory.
 ### Action Types
 
 - `contract`: Constructs a signable smart contract transaction.
-- `link`: Displays a simple`link.
+- `link`: Displays a simple link.
 
 ### Clients
 
