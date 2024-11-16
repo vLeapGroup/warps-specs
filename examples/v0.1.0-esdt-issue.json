@@ -11,15 +11,9 @@
       "address": "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzllls8a5w6u",
       "func": "issue",
       "args": [],
+      "value": "50000000000000000",
       "gasLimit": 60000000,
       "inputs": [
-        {
-          "name": "val",
-          "type": "bigint",
-          "position": "value",
-          "source": "query",
-          "required": true
-        },
         {
           "name": "Token Name",
           "type": "string",
