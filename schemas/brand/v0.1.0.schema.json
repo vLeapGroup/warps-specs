@@ -1,0 +1,82 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Warp Brand Schema",
+  "description": "Schema for defining a warp brand's metadata and properties.",
+  "type": "object",
+  "properties": {
+    "protocol": {
+      "type": "string",
+      "title": "Protocol Identifier",
+      "description": "Specifies the protocol version and identifier."
+    },
+    "name": {
+      "type": "string",
+      "title": "Brand Name",
+      "description": "The name of the brand."
+    },
+    "description": {
+      "type": "string",
+      "title": "Brand Description",
+      "description": "A detailed description of the brand."
+    },
+    "logo": {
+      "type": "string",
+      "title": "Logo URL",
+      "description": "A URL to the brand's logo image."
+    },
+    "website": {
+      "type": ["string", "null"],
+      "title": "Website URL",
+      "description": "The URL of the brand's official website."
+    },
+    "colors": {
+      "type": "object",
+      "title": "Brand Colors",
+      "description": "The primary and secondary colors of the brand.",
+      "properties": {
+        "primary": {
+          "type": ["string", "null"],
+          "title": "Primary Color",
+          "description": "The primary color of the brand."
+        },
+        "secondary": {
+          "type": ["string", "null"],
+          "title": "Secondary Color",
+          "description": "The secondary color of the brand."
+        }
+      },
+      "additionalProperties": false
+    },
+    "cta": {
+      "type": "object",
+      "title": "Call to Action",
+      "description": "Information about the brand's call to action.",
+      "properties": {
+        "title": {
+          "type": "string",
+          "title": "CTA Title",
+          "description": "The title of the call to action."
+        },
+        "description": {
+          "type": "string",
+          "title": "CTA Description",
+          "description": "A description of the call to action."
+        },
+        "label": {
+          "type": "string",
+          "title": "CTA Label",
+          "description": "The label for the call to action button."
+        },
+        "url": {
+          "type": "string",
+          "title": "CTA URL",
+          "description": "The URL for the call to action."
+        }
+      },
+      "required": ["title", "description", "label", "url"],
+      "additionalProperties": false
+    }
+  },
+  "required": ["protocol", "name", "description", "logo"],
+  "additionalProperties": false
+}
