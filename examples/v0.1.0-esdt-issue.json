@@ -30,7 +30,7 @@
         },
         {
           "name": "Initial Supply",
-          "type": "bigint",
+          "type": "biguint",
           "position": "arg:3",
           "source": "field",
           "required": true
