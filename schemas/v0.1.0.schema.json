@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Warp Protocol Schema",
-  "description": "Generic schema for defining actions and metadata for blockchain transactions.",
+  "description": "Schema for defining actions and metadata for blockchain transactions.",
   "type": "object",
   "properties": {
     "protocol": {
@@ -81,6 +81,32 @@
                 "title": "Value",
                 "description": "The value to be sent with the contract call."
               },
+              "transfers": {
+                "type": "array",
+                "title": "Transfers",
+                "description": "A list of token transfers associated with the action.",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "token": {
+                      "type": "string",
+                      "title": "Token",
+                      "description": "The token being transferred."
+                    },
+                    "nonce": {
+                      "type": ["number", "null"],
+                      "title": "Nonce",
+                      "description": "The nonce for the token transfer."
+                    },
+                    "amount": {
+                      "type": ["string", "null"],
+                      "title": "Amount",
+                      "description": "The amount of the token being transferred."
+                    }
+                  },
+                  "required": ["token"]
+                }
+              },
               "inputs": {
                 "type": "array",
                 "title": "Inputs",
@@ -110,7 +136,9 @@
                         "bigint",
                         "boolean",
                         "address",
-                        "hex"
+                        "hex",
+                        "esdt",
+                        "nft"
                       ],
                       "title": "Input Type",
                       "description": "The type of input."
@@ -121,6 +149,7 @@
                       "description": "The position of the input in the function call.",
                       "enum": [
                         "value",
+                        "transfer",
                         "arg:1",
                         "arg:2",
                         "arg:3",
@@ -153,10 +182,23 @@
                       "type": "number",
                       "title": "Maximum Value",
                       "description": "The maximum value for the input."
+                    },
+                    "options": {
+                      "type": "array",
+                      "title": "Options",
+                      "description": "A list of string options for the input.",
+                      "items": {
+                        "type": "string"
+                      }
                     }
                   },
                   "required": ["name", "type", "position", "source"]
                 }
+              },
+              "next": {
+                "type": "string",
+                "title": "Next Action",
+                "description": "The identifier for the next action."
               }
             },
             "required": ["type", "label", "address", "func", "args", "gasLimit"]
@@ -213,7 +255,9 @@
                         "bigint",
                         "boolean",
                         "address",
-                        "hex"
+                        "hex",
+                        "esdt",
+                        "nft"
                       ],
                       "title": "Input Type",
                       "description": "The type of input."
@@ -224,6 +268,7 @@
                       "description": "The position of the input.",
                       "enum": [
                         "value",
+                        "transfer",
                         "arg:1",
                         "arg:2",
                         "arg:3",
@@ -256,6 +301,14 @@
                       "type": "number",
                       "title": "Maximum Value",
                       "description": "The maximum value for the input."
+                    },
+                    "options": {
+                      "type": "array",
+                      "title": "Options",
+                      "description": "A list of string options for the input.",
+                      "items": {
+                        "type": "string"
+                      }
                     }
                   },
                   "required": ["name", "type", "position", "source"]
@@ -266,6 +319,34 @@
           }
         ]
       }
+    },
+    "next": {
+      "type": "string",
+      "title": "Next Warp",
+      "description": "The identifier for the next warp."
+    },
+    "meta": {
+      "type": "object",
+      "title": "Metadata",
+      "description": "Metadata information about the warp.",
+      "properties": {
+        "hash": {
+          "type": "string",
+          "title": "Hash",
+          "description": "The hash of the warp."
+        },
+        "creator": {
+          "type": "string",
+          "title": "Creator",
+          "description": "The creator of the warp."
+        },
+        "createdAt": {
+          "type": "string",
+          "title": "Creation Date",
+          "description": "The date the warp was created."
+        }
+      },
+      "required": ["hash", "creator", "createdAt"]
     }
   },
   "required": ["protocol", "name", "title", "description", "preview", "actions"]
