@@ -1,0 +1,32 @@
+{
+  "protocol": "warp:0.1.0",
+  "name": "vLeap xMoney Guild Stake",
+  "title": "Stake with the vLeap xMoney Guild",
+  "description": "<p>Easily stake with <a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"https://guilds.xmoney.com/guilds/erd1qqqqqqqqqqqqqpgq2kwtwtlcv297v45kqakyl0x8ddytvv9dhu4qzprdfk\">our Guild</a> on xMoney.</p>",
+  "preview": "https://guilds.xmoney.com/assets/img/guild-hero-screenshots@2x.png",
+  "actions": [
+    {
+      "type": "contract",
+      "label": "Stake UTK now",
+      "address": "erd1qqqqqqqqqqqqqpgq2kwtwtlcv297v45kqakyl0x8ddytvv9dhu4qzprdfk",
+      "func": "stakeFarm",
+      "args": [],
+      "gasLimit": 25000000,
+      "inputs": [
+        {
+          "name": "UTK Stake",
+          "type": "esdt",
+          "position": "transfer",
+          "source": "field",
+          "required": true
+        }
+      ]
+    },
+    {
+      "type": "link",
+      "label": "View Guild",
+      "description": "View the details of the vLeap xMoney Guild.",
+      "url": "https://guilds.xmoney.com/guilds/erd1qqqqqqqqqqqqqpgq2kwtwtlcv297v45kqakyl0x8ddytvv9dhu4qzprdfk"
+    }
+  ]
+}
