@@ -19,14 +19,22 @@
           "type": "string",
           "position": "arg:1",
           "source": "field",
-          "required": true
+          "required": true,
+          "min": 3,
+          "max": 50,
+          "pattern": "^[a-zA-Z0-9]+$",
+          "patternDescription": "Only letters and numbers are allowed."
         },
         {
           "name": "Token Ticker",
           "type": "string",
           "position": "arg:2",
           "source": "field",
-          "required": true
+          "required": true,
+          "min": 3,
+          "max": 10,
+          "pattern": "^[A-Z0-9]+$",
+          "patternDescription": "Only uppercase letters and numbers are allowed."
         },
         {
           "name": "Initial Supply",
@@ -40,7 +48,9 @@
           "type": "uint8",
           "position": "arg:4",
           "source": "field",
-          "required": true
+          "required": true,
+          "min": 0,
+          "max": 18
         }
       ]
     },
