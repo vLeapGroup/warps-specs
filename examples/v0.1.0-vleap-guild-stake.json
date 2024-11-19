@@ -1,9 +1,9 @@
 {
   "protocol": "warp:0.1.0",
   "name": "vLeap xMoney Guild Stake",
-  "title": "Stake with the vLeap xMoney Guild",
+  "title": "Stake with the vLeap Guild on xMoney",
   "description": "<p>Easily stake with <a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"https://guilds.xmoney.com/guilds/erd1qqqqqqqqqqqqqpgq2kwtwtlcv297v45kqakyl0x8ddytvv9dhu4qzprdfk\">our Guild</a> on xMoney.</p>",
-  "preview": "https://guilds.xmoney.com/assets/img/guild-hero-screenshots@2x.png",
+  "preview": "https://vleap.io/images/external/warp-xmoney.png",
   "actions": [
     {
       "type": "contract",
@@ -18,7 +18,8 @@
           "type": "esdt",
           "position": "transfer",
           "source": "field",
-          "required": true
+          "required": true,
+          "options": ["UTK-2f80e9"]
         }
       ]
     },
