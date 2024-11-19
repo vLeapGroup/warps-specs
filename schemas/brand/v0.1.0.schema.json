@@ -24,10 +24,18 @@
       "title": "Logo URL",
       "description": "A URL to the brand's logo image."
     },
-    "website": {
-      "type": ["string", "null"],
-      "title": "Website URL",
-      "description": "The URL of the brand's official website."
+    "urls": {
+      "type": "object",
+      "title": "Brand URLs",
+      "description": "The URLs associated with the brand.",
+      "properties": {
+        "web": {
+          "type": ["string", "null"],
+          "title": "Website URL",
+          "description": "The URL of the brand's official website."
+        }
+      },
+      "additionalProperties": false
     },
     "colors": {
       "type": "object",
