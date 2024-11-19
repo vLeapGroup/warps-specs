@@ -39,7 +39,7 @@
             "type": "object",
             "properties": {
               "type": {
-                "const": "contract",
+                "enum": ["contract"],
                 "title": "Action Type",
                 "description": "Specifies the action type as a contract."
               },
@@ -183,6 +183,16 @@
                       "title": "Maximum Value",
                       "description": "The maximum value for the input."
                     },
+                    "pattern": {
+                      "type": "string",
+                      "title": "Pattern",
+                      "description": "A regular expression pattern for validating the input."
+                    },
+                    "patternDescription": {
+                      "type": "string",
+                      "title": "Pattern Description",
+                      "description": "A description of the pattern for the input."
+                    },
                     "options": {
                       "type": "array",
                       "title": "Options",
@@ -207,7 +217,7 @@
             "type": "object",
             "properties": {
               "type": {
-                "const": "link",
+                "enum": ["link"],
                 "title": "Action Type",
                 "description": "Specifies the action type as a link."
               },
@@ -301,6 +311,16 @@
                       "type": "number",
                       "title": "Maximum Value",
                       "description": "The maximum value for the input."
+                    },
+                    "pattern": {
+                      "type": "string",
+                      "title": "Pattern",
+                      "description": "A regular expression pattern for validating the input."
+                    },
+                    "patternDescription": {
+                      "type": "string",
+                      "title": "Pattern Description",
+                      "description": "A description of the pattern for the input."
                     },
                     "options": {
                       "type": "array",
