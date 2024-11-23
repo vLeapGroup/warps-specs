@@ -200,6 +200,11 @@
                       "items": {
                         "type": "string"
                       }
+                    },
+                    "modifier": {
+                      "type": "string",
+                      "title": "Modifier",
+                      "description": "A modifier applied to the input, such as 'scale'."
                     }
                   },
                   "required": ["name", "type", "position", "source"]
@@ -329,6 +334,11 @@
                       "items": {
                         "type": "string"
                       }
+                    },
+                    "modifier": {
+                      "type": "string",
+                      "title": "Modifier",
+                      "description": "A modifier applied to the input, such as 'scale'."
                     }
                   },
                   "required": ["name", "type", "position", "source"]
