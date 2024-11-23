@@ -41,7 +41,8 @@
           "type": "biguint",
           "position": "arg:3",
           "source": "field",
-          "required": true
+          "required": true,
+          "modifier": "scale:Token Decimals"
         },
         {
           "name": "Token Decimals",
