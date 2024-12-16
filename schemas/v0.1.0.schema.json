@@ -1,383 +1,273 @@
 {
+  "$ref": "#/definitions/Warp",
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "Warp Protocol Schema",
-  "description": "Schema for defining actions and metadata for blockchain transactions.",
-  "type": "object",
-  "properties": {
-    "protocol": {
-      "type": "string",
-      "title": "Protocol Identifier",
-      "description": "Specifies the protocol version and identifier, e.g., 'warp:0.1.0'."
-    },
-    "name": {
-      "type": "string",
-      "title": "Warp Name",
-      "description": "A name for the warp."
-    },
-    "title": {
-      "type": "string",
-      "title": "Warp Title",
-      "description": "A brief title describing the warp."
-    },
-    "description": {
-      "type": ["string", "null"],
-      "title": "Warp Description",
-      "description": "A detailed description of the warp's purpose."
-    },
-    "preview": {
-      "type": "string",
-      "title": "Preview Image URL",
-      "description": "A URL to a preview image for the warp."
-    },
-    "actions": {
-      "type": "array",
-      "title": "Actions",
-      "description": "A list of actions involved in the warp.",
-      "items": {
-        "oneOf": [
-          {
-            "type": "object",
-            "properties": {
-              "type": {
-                "enum": ["contract"],
-                "title": "Action Type",
-                "description": "Specifies the action type as a contract."
-              },
-              "label": {
-                "type": "string",
-                "title": "Action Label",
-                "description": "A label for the action, e.g., 'Transfer Funds'."
-              },
-              "description": {
-                "type": ["string", "null"],
-                "title": "Action Description",
-                "description": "A description of what the contract action does."
-              },
-              "address": {
-                "type": "string",
-                "title": "Contract Address",
-                "description": "The blockchain address involved in the contract action."
-              },
-              "func": {
-                "type": ["string", "null"],
-                "title": "Function Name",
-                "description": "The name of the function to call in the contract."
-              },
-              "args": {
-                "type": "array",
-                "title": "Arguments",
-                "description": "A list of arguments for the contract function call.",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "gasLimit": {
-                "type": "number",
-                "title": "Minimum Gas Limit",
-                "description": "The minimum gas limit for the contract function call."
-              },
-              "value": {
-                "type": ["string", "null"],
-                "title": "Value",
-                "description": "The value to be sent with the contract call."
-              },
-              "transfers": {
-                "type": "array",
-                "title": "Transfers",
-                "description": "A list of token transfers associated with the action.",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "token": {
-                      "type": "string",
-                      "title": "Token",
-                      "description": "The token being transferred."
-                    },
-                    "nonce": {
-                      "type": ["number", "null"],
-                      "title": "Nonce",
-                      "description": "The nonce for the token transfer."
-                    },
-                    "amount": {
-                      "type": ["string", "null"],
-                      "title": "Amount",
-                      "description": "The amount of the token being transferred."
-                    }
-                  },
-                  "required": ["token"]
-                }
-              },
-              "inputs": {
-                "type": "array",
-                "title": "Inputs",
-                "description": "A list of inputs required for the contract action.",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "name": {
-                      "type": "string",
-                      "title": "Input Name",
-                      "description": "The name of the input field."
-                    },
-                    "description": {
-                      "type": ["string", "null"],
-                      "title": "Input Description",
-                      "description": "A description of the input field."
-                    },
-                    "type": {
-                      "type": "string",
-                      "enum": [
-                        "string",
-                        "uint8",
-                        "uint16",
-                        "uint32",
-                        "uint64",
-                        "biguint",
-                        "bigint",
-                        "boolean",
-                        "address",
-                        "hex",
-                        "esdt",
-                        "nft"
-                      ],
-                      "title": "Input Type",
-                      "description": "The type of input."
-                    },
-                    "position": {
-                      "type": "string",
-                      "title": "Position",
-                      "description": "The position of the input in the function call.",
-                      "enum": [
-                        "value",
-                        "transfer",
-                        "arg:1",
-                        "arg:2",
-                        "arg:3",
-                        "arg:4",
-                        "arg:5",
-                        "arg:6",
-                        "arg:7",
-                        "arg:8",
-                        "arg:9",
-                        "arg:10"
-                      ]
-                    },
-                    "source": {
-                      "type": "string",
-                      "enum": ["field", "query"],
-                      "title": "Input Source",
-                      "description": "The source of the input."
-                    },
-                    "required": {
-                      "type": "boolean",
-                      "title": "Is Required",
-                      "description": "Indicates if the input is required."
-                    },
-                    "min": {
-                      "type": "number",
-                      "title": "Minimum Value",
-                      "description": "The minimum value for the input."
-                    },
-                    "max": {
-                      "type": "number",
-                      "title": "Maximum Value",
-                      "description": "The maximum value for the input."
-                    },
-                    "pattern": {
-                      "type": "string",
-                      "title": "Pattern",
-                      "description": "A regular expression pattern for validating the input."
-                    },
-                    "patternDescription": {
-                      "type": "string",
-                      "title": "Pattern Description",
-                      "description": "A description of the pattern for the input."
-                    },
-                    "options": {
-                      "type": "array",
-                      "title": "Options",
-                      "description": "A list of string options for the input.",
-                      "items": {
-                        "type": "string"
-                      }
-                    },
-                    "modifier": {
-                      "type": "string",
-                      "title": "Modifier",
-                      "description": "A modifier applied to the input, such as 'scale'."
-                    }
-                  },
-                  "required": ["name", "type", "position", "source"]
-                }
-              },
-              "next": {
-                "type": "string",
-                "title": "Next Action",
-                "description": "The identifier for the next action."
-              }
-            },
-            "required": ["type", "label", "address", "func", "args", "gasLimit"]
-          },
-          {
-            "type": "object",
-            "properties": {
-              "type": {
-                "enum": ["link"],
-                "title": "Action Type",
-                "description": "Specifies the action type as a link."
-              },
-              "label": {
-                "type": "string",
-                "title": "Action Label",
-                "description": "A label for the link action."
-              },
-              "description": {
-                "type": ["string", "null"],
-                "title": "Action Description",
-                "description": "A description of what the link action does."
-              },
-              "url": {
-                "type": "string",
-                "title": "Link URL",
-                "description": "The URL for additional information or actions."
-              },
-              "inputs": {
-                "type": "array",
-                "title": "Inputs",
-                "description": "A list of inputs for the link action.",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "name": {
-                      "type": "string",
-                      "title": "Input Name",
-                      "description": "The name of the input field."
-                    },
-                    "description": {
-                      "type": ["string", "null"],
-                      "title": "Input Description",
-                      "description": "A description of the input field."
-                    },
-                    "type": {
-                      "type": "string",
-                      "enum": [
-                        "string",
-                        "uint8",
-                        "uint16",
-                        "uint32",
-                        "uint64",
-                        "biguint",
-                        "bigint",
-                        "boolean",
-                        "address",
-                        "hex",
-                        "esdt",
-                        "nft"
-                      ],
-                      "title": "Input Type",
-                      "description": "The type of input."
-                    },
-                    "position": {
-                      "type": "string",
-                      "title": "Position",
-                      "description": "The position of the input.",
-                      "enum": [
-                        "value",
-                        "transfer",
-                        "arg:1",
-                        "arg:2",
-                        "arg:3",
-                        "arg:4",
-                        "arg:5",
-                        "arg:6",
-                        "arg:7",
-                        "arg:8",
-                        "arg:9",
-                        "arg:10"
-                      ]
-                    },
-                    "source": {
-                      "type": "string",
-                      "enum": ["field", "query"],
-                      "title": "Input Source",
-                      "description": "The source of the input."
-                    },
-                    "required": {
-                      "type": "boolean",
-                      "title": "Is Required",
-                      "description": "Indicates if the input is required."
-                    },
-                    "min": {
-                      "type": "number",
-                      "title": "Minimum Value",
-                      "description": "The minimum value for the input."
-                    },
-                    "max": {
-                      "type": "number",
-                      "title": "Maximum Value",
-                      "description": "The maximum value for the input."
-                    },
-                    "pattern": {
-                      "type": "string",
-                      "title": "Pattern",
-                      "description": "A regular expression pattern for validating the input."
-                    },
-                    "patternDescription": {
-                      "type": "string",
-                      "title": "Pattern Description",
-                      "description": "A description of the pattern for the input."
-                    },
-                    "options": {
-                      "type": "array",
-                      "title": "Options",
-                      "description": "A list of string options for the input.",
-                      "items": {
-                        "type": "string"
-                      }
-                    },
-                    "modifier": {
-                      "type": "string",
-                      "title": "Modifier",
-                      "description": "A modifier applied to the input, such as 'scale'."
-                    }
-                  },
-                  "required": ["name", "type", "position", "source"]
-                }
-              }
-            },
-            "required": ["type", "label", "url"]
-          }
-        ]
-      }
-    },
-    "next": {
-      "type": "string",
-      "title": "Next Warp",
-      "description": "The identifier for the next warp."
-    },
-    "meta": {
-      "type": "object",
-      "title": "Metadata",
-      "description": "Metadata information about the warp.",
+  "definitions": {
+    "Warp": {
+      "additionalProperties": false,
       "properties": {
-        "hash": {
-          "type": "string",
-          "title": "Hash",
-          "description": "The hash of the warp."
+        "actions": {
+          "items": {
+            "$ref": "#/definitions/WarpAction"
+          },
+          "type": "array"
         },
-        "creator": {
-          "type": "string",
-          "title": "Creator",
-          "description": "The creator of the warp."
+        "description": {
+          "type": ["string", "null"]
         },
-        "createdAt": {
-          "type": "string",
-          "title": "Creation Date",
-          "description": "The date the warp was created."
+        "meta": {
+          "$ref": "#/definitions/WarpMeta"
+        },
+        "name": {
+          "type": "string"
+        },
+        "next": {
+          "type": "string"
+        },
+        "preview": {
+          "type": "string"
+        },
+        "protocol": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "vars": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "type": "object"
         }
       },
-      "required": ["hash", "creator", "createdAt"]
+      "required": [
+        "protocol",
+        "name",
+        "title",
+        "description",
+        "preview",
+        "actions"
+      ],
+      "type": "object"
+    },
+    "WarpAction": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/WarpContractAction"
+        },
+        {
+          "$ref": "#/definitions/WarpLinkAction"
+        }
+      ]
+    },
+    "WarpActionInput": {
+      "additionalProperties": false,
+      "properties": {
+        "description": {
+          "type": ["string", "null"]
+        },
+        "max": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "$ref": "#/definitions/WarpVarPlaceholder"
+            }
+          ]
+        },
+        "min": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "$ref": "#/definitions/WarpVarPlaceholder"
+            }
+          ]
+        },
+        "modifier": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "options": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "pattern": {
+          "type": "string"
+        },
+        "patternDescription": {
+          "type": "string"
+        },
+        "position": {
+          "$ref": "#/definitions/WarpActionInputPosition"
+        },
+        "required": {
+          "type": "boolean"
+        },
+        "source": {
+          "$ref": "#/definitions/WarpActionInputSource"
+        },
+        "type": {
+          "$ref": "#/definitions/WarpActionInputType"
+        }
+      },
+      "required": ["name", "type", "position", "source"],
+      "type": "object"
+    },
+    "WarpActionInputPosition": {
+      "enum": [
+        "value",
+        "transfer",
+        "arg:1",
+        "arg:2",
+        "arg:3",
+        "arg:4",
+        "arg:5",
+        "arg:6",
+        "arg:7",
+        "arg:8",
+        "arg:9",
+        "arg:10"
+      ],
+      "type": "string"
+    },
+    "WarpActionInputSource": {
+      "enum": ["field", "query"],
+      "type": "string"
+    },
+    "WarpActionInputType": {
+      "enum": [
+        "string",
+        "uint8",
+        "uint16",
+        "uint32",
+        "uint64",
+        "biguint",
+        "boolean",
+        "address",
+        "hex",
+        "esdt",
+        "nft"
+      ],
+      "type": "string"
+    },
+    "WarpActionType": {
+      "enum": ["contract", "link"],
+      "type": "string"
+    },
+    "WarpContractAction": {
+      "additionalProperties": false,
+      "properties": {
+        "address": {
+          "type": "string"
+        },
+        "args": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "description": {
+          "type": ["string", "null"]
+        },
+        "func": {
+          "type": ["string", "null"]
+        },
+        "gasLimit": {
+          "type": "number"
+        },
+        "inputs": {
+          "items": {
+            "$ref": "#/definitions/WarpActionInput"
+          },
+          "type": "array"
+        },
+        "label": {
+          "type": "string"
+        },
+        "next": {
+          "type": "string"
+        },
+        "transfers": {
+          "items": {
+            "$ref": "#/definitions/WarpContractActionTransfer"
+          },
+          "type": "array"
+        },
+        "type": {
+          "$ref": "#/definitions/WarpActionType"
+        },
+        "value": {
+          "type": "string"
+        }
+      },
+      "required": ["type", "label", "address", "func", "args", "gasLimit"],
+      "type": "object"
+    },
+    "WarpContractActionTransfer": {
+      "additionalProperties": false,
+      "properties": {
+        "amount": {
+          "type": "string"
+        },
+        "nonce": {
+          "type": "number"
+        },
+        "token": {
+          "type": "string"
+        }
+      },
+      "required": ["token"],
+      "type": "object"
+    },
+    "WarpLinkAction": {
+      "additionalProperties": false,
+      "properties": {
+        "description": {
+          "type": ["string", "null"]
+        },
+        "inputs": {
+          "items": {
+            "$ref": "#/definitions/WarpActionInput"
+          },
+          "type": "array"
+        },
+        "label": {
+          "type": "string"
+        },
+        "type": {
+          "$ref": "#/definitions/WarpActionType"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "required": ["type", "label", "url"],
+      "type": "object"
+    },
+    "WarpMeta": {
+      "additionalProperties": false,
+      "properties": {
+        "createdAt": {
+          "type": "string"
+        },
+        "creator": {
+          "type": "string"
+        },
+        "hash": {
+          "type": "string"
+        }
+      },
+      "required": ["hash", "creator", "createdAt"],
+      "type": "object"
+    },
+    "WarpVarPlaceholder": {
+      "type": "string"
     }
-  },
-  "required": ["protocol", "name", "title", "description", "preview", "actions"]
+  }
 }
