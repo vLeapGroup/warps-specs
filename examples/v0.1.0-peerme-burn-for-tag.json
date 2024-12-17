@@ -1,0 +1,38 @@
+{
+  "protocol": "warp:0.1.0",
+  "name": "Burn for Tag",
+  "title": "Burn $SUPER for PeerTags",
+  "description": "Each burn of {{REQUIRED_AMOUNT}} $SUPER will qualify your for a set of PeerTags (4 tags) delivered to your door.",
+  "preview": "https://peerme.io/images/external/warps/burn-for-tag-preview.jpg",
+  "vars": {
+    "REQUIRED_AMOUNT": "query:amount"
+  },
+  "actions": [
+    {
+      "type": "contract",
+      "label": "Burn for Tag now",
+      "address": "erd1qqqqqqqqqqqqqpgq4kns8he9r84c58ed3jjuam3tp7u9zl4n27rsy2kv6u",
+      "func": "burnForTrust",
+      "args": [],
+      "gasLimit": 20000000,
+      "inputs": [
+        {
+          "name": "SUPER to burn",
+          "type": "esdt",
+          "position": "transfer",
+          "source": "field",
+          "required": true,
+          "options": ["SUPER-507aa6"],
+          "min": "{{REQUIRED_AMOUNT}}"
+        }
+      ]
+    },
+    {
+      "type": "link",
+      "label": "View Tags",
+      "description": "View details of PeerTags.",
+      "url": "https://peerme.io/peer-tags"
+    }
+  ],
+  "next": "https://tally.so/r/w4PvNk"
+}
