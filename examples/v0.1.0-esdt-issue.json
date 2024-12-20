@@ -3,7 +3,7 @@
   "name": "Create Token",
   "title": "Create a fungible token (ESDT).",
   "description": "The fungible token will be created on the MultiversX blockchain.",
-  "preview": "https://docs.multiversx.com/img/social.jpg",
+  "preview": "https://vleap.io/images/external/warps/multiversx-docs.jpg",
   "actions": [
     {
       "type": "contract",
