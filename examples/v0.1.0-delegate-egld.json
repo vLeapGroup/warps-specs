@@ -8,7 +8,7 @@
     {
       "type": "contract",
       "label": "Stake now",
-      "address": "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqallllls5rqmaf",
+      "address": "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqplllllscktaww",
       "func": "delegate",
       "args": [],
       "gasLimit": 10000000,
