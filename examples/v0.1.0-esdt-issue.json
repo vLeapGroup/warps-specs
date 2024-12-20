@@ -1,6 +1,6 @@
 {
   "protocol": "warp:0.1.0",
-  "name": "ESDT Creator",
+  "name": "Create Token",
   "title": "Create a fungible token (ESDT).",
   "description": "The fungible token will be created on the MultiversX blockchain.",
   "preview": "https://docs.multiversx.com/img/social.jpg",
