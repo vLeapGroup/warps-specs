@@ -19,7 +19,9 @@
           "type": "biguint",
           "position": "value",
           "source": "field",
-          "required": true
+          "required": true,
+          "min": 1,
+          "modifier": "scale:18"
         }
       ]
     },
