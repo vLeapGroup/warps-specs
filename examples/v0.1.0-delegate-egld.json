@@ -8,7 +8,6 @@
     {
       "type": "contract",
       "label": "Stake now",
-      "description": "Stake eGold with our staking agency.",
       "address": "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqallllls5rqmaf",
       "func": "delegate",
       "args": [],
@@ -17,7 +16,7 @@
         {
           "name": "value",
           "description": "Amount of eGold to delegate.",
-          "type": "bigint",
+          "type": "biguint",
           "position": "value",
           "source": "field",
           "required": true
