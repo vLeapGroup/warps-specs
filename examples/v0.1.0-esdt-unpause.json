@@ -1,0 +1,32 @@
+{
+  "protocol": "warp:0.1.0",
+  "name": "Unpause Token",
+  "title": "Unpause all operations of a token.",
+  "description": "The manager of an ESDT token may choose to resume all transactions of the token after it has been paused.",
+  "preview": "https://vleap.io/images/external/warps/multiversx-docs.jpg",
+  "actions": [
+    {
+      "type": "contract",
+      "label": "Unpause now",
+      "address": "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzllls8a5w6u",
+      "func": "unPause",
+      "args": [],
+      "gasLimit": 60000000,
+      "inputs": [
+        {
+          "name": "Token Identifier",
+          "type": "string",
+          "position": "arg:1",
+          "source": "field",
+          "required": true
+        }
+      ]
+    },
+    {
+      "type": "link",
+      "label": "Read docs",
+      "description": "Find more information about the ESDT standard.",
+      "url": "https://docs.multiversx.com/tokens/fungible-tokens"
+    }
+  ]
+}
