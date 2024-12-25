@@ -1,0 +1,28 @@
+{
+  "protocol": "warp:0.1.0",
+  "name": "xExchange: Swap eGold to SUPER",
+  "title": "Swap eGold to SUPER",
+  "description": "Swap eGold to SUPER on xExchange.",
+  "preview": "https://vleap.io/images/external/warps/xexchange-swap.png",
+  "actions": [
+    {
+      "type": "contract",
+      "label": "Swap now",
+      "address": "erd1qqqqqqqqqqqqqpgq957r57dca0h6avq2mtfd7tvxlhcp3r4y0n4sdq7clt",
+      "func": "swapTokensFixedInput",
+      "args": ["string:SUPER-19c5c5", "biguint:1"],
+      "gasLimit": 10000000,
+      "inputs": [
+        {
+          "name": "WEGLD Amount",
+          "type": "esdt",
+          "position": "transfer",
+          "source": "field",
+          "required": true,
+          "min": 1,
+          "options": ["WEGLD-a28c59"]
+        }
+      ]
+    }
+  ]
+}
