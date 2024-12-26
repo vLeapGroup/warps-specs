@@ -1,0 +1,27 @@
+{
+  "protocol": "warp:0.1.0",
+  "name": "Raffle: Create",
+  "title": "Create a new Raffle",
+  "description": "<p>Create a simple raffle and receive its unique ID. This ID can then be used to create a Participation Warp.</p>",
+  "preview": "https://vleap.io/images/external/warps/raffle-create.jpg",
+  "actions": [
+    {
+      "type": "contract",
+      "label": "Create now",
+      "address": "erd1qqqqqqqqqqqqqpgqht0nht73ewg4mxr8nd89v5p8cfryjjlfl3tskqtqpw",
+      "func": "createRaffle",
+      "args": [],
+      "gasLimit": 10000000,
+      "inputs": [
+        {
+          "name": "Min. Participation Fee (eGold)",
+          "type": "biguint",
+          "position": "arg:1",
+          "source": "field",
+          "required": true,
+          "modifier": "scale:18"
+        }
+      ]
+    }
+  ]
+}
