@@ -1,0 +1,36 @@
+{
+  "protocol": "warp:0.1.0",
+  "name": "Tipping: Tip",
+  "title": "Tip a User",
+  "description": "Tip a user with any token.",
+  "preview": "https://vleap.io/images/external/warps/tip.jpg",
+  "vars": {
+    "RECEIVER": "query:to"
+  },
+  "actions": [
+    {
+      "type": "contract",
+      "label": "Tip now",
+      "address": "erd1qqqqqqqqqqqqqpgqszhrp70u9vmutn9yr4xgjhrfwakxzvd5l3ts3aem69",
+      "func": "tip",
+      "args": ["address:{{RECEIVER}}"],
+      "gasLimit": 5000000,
+      "inputs": [
+        {
+          "name": "Amount",
+          "type": "esdt",
+          "position": "transfer",
+          "source": "field",
+          "required": true
+        },
+        {
+          "name": "Note",
+          "type": "string",
+          "position": "arg:2",
+          "source": "field",
+          "required": true
+        }
+      ]
+    }
+  ]
+}
