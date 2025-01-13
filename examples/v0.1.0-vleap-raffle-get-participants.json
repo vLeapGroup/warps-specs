@@ -13,8 +13,7 @@
       "label": "Get Participants",
       "address": "erd1qqqqqqqqqqqqqpgqht0nht73ewg4mxr8nd89v5p8cfryjjlfl3tskqtqpw",
       "func": "getParticipations",
-      "args": ["uint64:{{RAFFLE_ID}}"],
-      "output": "list:Participant,Twitter"
+      "args": ["uint64:{{RAFFLE_ID}}"]
     }
   ]
 }
