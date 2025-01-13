@@ -1,11 +1,11 @@
 {
-  "protocol": "warp:0.1.0",
+  "protocol": "warp:0.2.0",
   "name": "Raffle: Participate",
   "title": "Participate in a Raffle",
   "description": "<p>Participate in the raffle sent to you. ID: {{RAFFLE_ID}}</p>",
   "preview": "https://vleap.io/images/external/warps/raffle-participate.jpg",
   "vars": {
-    "RAFFLE_ID": "query:raffle-id",
+    "RAFFLE_ID": "query:raffle",
     "EXTRA_INFO_LABEL": "query:extra-info",
     "ENTRY_FEE": "query:entry-fee"
   },
