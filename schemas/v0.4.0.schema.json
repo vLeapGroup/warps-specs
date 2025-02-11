@@ -11,6 +11,9 @@
           },
           "type": "array"
         },
+        "bot": {
+          "type": "string"
+        },
         "description": {
           "type": ["string", "null"]
         },
@@ -58,6 +61,9 @@
           "$ref": "#/definitions/WarpQueryAction"
         },
         {
+          "$ref": "#/definitions/WarpCollectAction"
+        },
+        {
           "$ref": "#/definitions/WarpLinkAction"
         }
       ]
@@ -65,6 +71,12 @@
     "WarpActionInput": {
       "additionalProperties": false,
       "properties": {
+        "as": {
+          "type": "string"
+        },
+        "bot": {
+          "type": "string"
+        },
         "description": {
           "type": ["string", "null"]
         },
@@ -147,8 +159,53 @@
       "type": "string"
     },
     "WarpActionType": {
-      "enum": ["contract", "query", "link"],
+      "enum": ["contract", "query", "collect", "link"],
       "type": "string"
+    },
+    "WarpCollectAction": {
+      "additionalProperties": false,
+      "properties": {
+        "description": {
+          "type": ["string", "null"]
+        },
+        "destination": {
+          "additionalProperties": false,
+          "properties": {
+            "headers": {
+              "additionalProperties": {
+                "type": "string"
+              },
+              "type": "object"
+            },
+            "method": {
+              "enum": ["GET", "POST"],
+              "type": "string"
+            },
+            "url": {
+              "type": "string"
+            }
+          },
+          "required": ["url", "method", "headers"],
+          "type": "object"
+        },
+        "inputs": {
+          "items": {
+            "$ref": "#/definitions/WarpActionInput"
+          },
+          "type": "array"
+        },
+        "label": {
+          "type": "string"
+        },
+        "next": {
+          "type": "string"
+        },
+        "type": {
+          "$ref": "#/definitions/WarpActionType"
+        }
+      },
+      "required": ["type", "label", "destination"],
+      "type": "object"
     },
     "WarpContractAction": {
       "additionalProperties": false,
