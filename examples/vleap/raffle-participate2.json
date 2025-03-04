@@ -1,0 +1,40 @@
+{
+  "protocol": "warp:0.2.0",
+  "name": "Raffle: Participate",
+  "title": "Participate in a Raffle",
+  "description": "<p>Participate in the raffle sent to you. ID: {{RAFFLE_ID}}</p>",
+  "preview": "https://vleap.io/images/external/warps/raffle-participate.jpg",
+  "vars": {
+    "RAFFLE_ID": "query:raffle",
+    "INFO1": "query:info1-label",
+    "INFO2": "query:info2-label",
+    "ENTRY_FEE": "query:entry-fee"
+  },
+  "actions": [
+    {
+      "type": "contract",
+      "label": "Participate now",
+      "address": "erd1qqqqqqqqqqqqqpgqht0nht73ewg4mxr8nd89v5p8cfryjjlfl3tskqtqpw",
+      "func": "participate",
+      "args": ["uint64:{{RAFFLE_ID}}"],
+      "value": "{{ENTRY_FEE}}",
+      "gasLimit": 10000000,
+      "inputs": [
+        {
+          "name": "{{INFO1}}",
+          "type": "string",
+          "position": "arg:2",
+          "source": "field",
+          "required": true
+        },
+        {
+          "name": "{{INFO2}}",
+          "type": "string",
+          "position": "arg:3",
+          "source": "field",
+          "required": true
+        }
+      ]
+    }
+  ]
+}
