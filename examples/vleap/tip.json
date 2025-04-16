@@ -1,5 +1,5 @@
 {
-  "protocol": "warp:0.1.0",
+  "protocol": "warp:1.0.0",
   "name": "Tipping: Tip",
   "title": "Tip a User",
   "description": "Tip a user with any token.",

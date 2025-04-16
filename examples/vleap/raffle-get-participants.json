@@ -13,7 +13,8 @@
       "label": "Get Participants",
       "address": "erd1qqqqqqqqqqqqqpgqht0nht73ewg4mxr8nd89v5p8cfryjjlfl3tskqtqpw",
       "func": "getParticipations",
-      "args": ["uint64:{{RAFFLE_ID}}"]
+      "args": ["uint64:{{RAFFLE_ID}}"],
+      "abi": "hash:779a71a57507759eb4aca42a34e513f140d77e8711fb681ede142c1cb037c257"
     }
   ]
 }
