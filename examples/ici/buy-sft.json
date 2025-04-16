@@ -1,0 +1,23 @@
+{
+  "protocol": "warp:0.5.0",
+  "name": "Example heading",
+  "title": "Example title",
+  "description": "Example description",
+  "actions": [
+    {
+      "type": "contract",
+      "label": "Buy now",
+      "address": "erd1qqqqqqqqqqqqqpgqra34kjj9zu6jvdldag72dyknnrh2ts9aj0wqp4acqh",
+      "func": "buySft",
+      "args": ["uint64:518", "string:APDN-65a887", "uint64:114", "biguint:1"],
+      "value": "1000000000000000",
+      "gasLimit": 10000000
+    },
+    {
+      "type": "link",
+      "label": "Learn more",
+      "description": "Find more information about SFT.",
+      "url": "https://nft.ici.ro"
+    }
+  ]
+}
