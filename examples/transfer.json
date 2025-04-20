@@ -1,0 +1,30 @@
+{
+  "protocol": "warp:1.0.0",
+  "name": "Transfer",
+  "title": "Asset Transfer",
+  "description": "Transfer an asset from one account to another.",
+  "actions": [
+    {
+      "type": "transfer",
+      "label": "Send now",
+      "inputs": [
+        {
+          "name": "Receiver",
+          "bot": "The blockchain address of the receiver.",
+          "type": "address",
+          "position": "receiver",
+          "source": "field",
+          "required": true
+        },
+        {
+          "name": "Asset",
+          "bot": "The asset to transfer. Construct the format as follows from the user input: 'USH-123456|0|5' (id|nonce|amount)",
+          "type": "esdt",
+          "position": "transfer",
+          "source": "field",
+          "required": true
+        }
+      ]
+    }
+  ]
+}
