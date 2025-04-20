@@ -1,0 +1,45 @@
+{
+  "protocol": "warp:1.0.0",
+  "name": "JoAi: Onboarding",
+  "title": "Onboarding",
+  "description": "Onboarding for JoAi.",
+  "bot": "Welcome the user to JoAi. Then proceed to collect the required information.",
+  "vars": {
+    "COLLECT_API_URL": "env:COLLECT_API_URL",
+    "COLLECT_API_KEY": "env:COLLECT_API_KEY"
+  },
+  "actions": [
+    {
+      "type": "collect",
+      "label": "Submit now",
+      "destination": {
+        "url": "{{COLLECT_API_URL}}",
+        "method": "POST",
+        "headers": {
+          "Authorization": "Bearer {{COLLECT_API_KEY}}"
+        }
+      },
+      "inputs": [
+        {
+          "name": "User Name",
+          "as": "userName",
+          "bot": "The users name for further identification.",
+          "type": "string",
+          "position": "arg:1",
+          "source": "field",
+          "required": true
+        },
+        {
+          "name": "Source",
+          "description": "How did you discover JoAi? Was it a Google search, friend recommendation, or blog post?",
+          "as": "source",
+          "bot": "How the user discovered JoAi. Give examples like Google search, friend recommendation, blog post, etc.",
+          "type": "string",
+          "position": "arg:2",
+          "source": "field",
+          "required": true
+        }
+      ]
+    }
+  ]
+}

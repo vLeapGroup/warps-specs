@@ -1,0 +1,34 @@
+{
+  "protocol": "warp:1.0.0",
+  "name": "JoAi: Name Update",
+  "title": "Update your name",
+  "description": "Update your name to JoAi.",
+  "vars": {
+    "COLLECT_API_KEY": "env:COLLECT_API_KEY"
+  },
+  "actions": [
+    {
+      "type": "collect",
+      "label": "Submit now",
+      "destination": {
+        "url": "https://devnet-api.joai.ai/warps/collect",
+        "method": "POST",
+        "headers": {
+          "Authorization": "Bearer {{COLLECT_API_KEY}}"
+        }
+      },
+      "inputs": [
+        {
+          "name": "User Name",
+          "as": "userName",
+          "bot": "The users name for further identification.",
+          "type": "string",
+          "position": "arg:1",
+          "source": "field",
+          "required": true,
+          "min": 3
+        }
+      ]
+    }
+  ]
+}
