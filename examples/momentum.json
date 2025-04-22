@@ -1,0 +1,15 @@
+{
+  "protocol": "warp:1.0.0",
+  "name": "Momentum: Proof of Pod",
+  "title": "Claim your Proof of Pod",
+  "preview": "https://vleap.io/images/external/warps/momentum-podcast.png",
+  "description": "Sign the transaction to claim your Proof of Pod.",
+  "actions": [
+    {
+      "type": "transfer",
+      "label": "Claim PoP",
+      "address": "erd1q4j9h0r3qfhd79jc0r6ctue5edlptt50prrgug057yksgafum46spha4hp",
+      "data": "string:MOMENTUM"
+    }
+  ]
+}
