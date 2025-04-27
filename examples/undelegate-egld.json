@@ -1,0 +1,28 @@
+{
+  "protocol": "warp:0.1.0",
+  "name": "Undelegate Egld",
+  "title": "Undelegate your EGLD",
+  "description": "Undelegate your EGLD to enable extra benefits across all our platforms.",
+  "actions": [
+    {
+      "type": "contract",
+      "label": "Undelegate now",
+      "address": "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqplllllscktaww",
+      "func": "unDelegate",
+      "args": [],
+      "gasLimit": 10000000,
+      "inputs": [
+        {
+          "name": "value",
+          "description": "Amount of eGold to undelegate.",
+          "type": "biguint",
+          "position": "arg:1",
+          "source": "field",
+          "required": true,
+          "min": 1,
+          "modifier": "scale:18"
+        }
+      ]
+    }
+  ]
+}
