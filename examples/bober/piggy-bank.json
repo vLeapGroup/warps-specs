@@ -1,0 +1,25 @@
+{
+  "protocol": "warp:1.0.0",
+  "name": "Bober Piggy Wallet: Deposit eGold",
+  "title": "Deposit eGold into the Bober Piggy Wallet",
+  "description": "The Piggy Wallet fuels the future of BOBER. Contribute to fund exciting initiatives like CEX/DEX listings, impactful marketing campaigns, and further development on MultiversX, driving growth and expanding our reach.",
+  "preview": "https://tools.multiversx.com/assets-cdn/accounts/erd1qqqqqqqqqqqqqpgq332rrs5lk3pz606uvsnwrgl9kcfa8leyveqsh3arun/icon.svg",
+  "actions": [
+    {
+      "type": "transfer",
+      "label": "Deposit now",
+      "address": "erd1qqqqqqqqqqqqqpgq332rrs5lk3pz606uvsnwrgl9kcfa8leyveqsh3arun",
+      "inputs": [
+        {
+          "name": "Amount",
+          "type": "biguint",
+          "position": "value",
+          "source": "field",
+          "required": true,
+          "min": 0.01,
+          "modifier": "scale:18"
+        }
+      ]
+    }
+  ]
+}
