@@ -1,0 +1,407 @@
+{
+  "$ref": "#/definitions/Warp",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "Warp": {
+      "additionalProperties": false,
+      "properties": {
+        "actions": {
+          "items": {
+            "$ref": "#/definitions/WarpAction"
+          },
+          "type": "array"
+        },
+        "bot": {
+          "type": "string"
+        },
+        "description": {
+          "type": ["string", "null"]
+        },
+        "meta": {
+          "$ref": "#/definitions/WarpMeta"
+        },
+        "name": {
+          "type": "string"
+        },
+        "next": {
+          "type": "string"
+        },
+        "preview": {
+          "type": "string"
+        },
+        "protocol": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "vars": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "type": "object"
+        }
+      },
+      "required": ["protocol", "name", "title", "description", "actions"],
+      "type": "object"
+    },
+    "WarpAction": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/WarpTransferAction"
+        },
+        {
+          "$ref": "#/definitions/WarpContractAction"
+        },
+        {
+          "$ref": "#/definitions/WarpQueryAction"
+        },
+        {
+          "$ref": "#/definitions/WarpCollectAction"
+        },
+        {
+          "$ref": "#/definitions/WarpLinkAction"
+        }
+      ]
+    },
+    "WarpActionInput": {
+      "additionalProperties": false,
+      "properties": {
+        "as": {
+          "type": "string"
+        },
+        "bot": {
+          "type": "string"
+        },
+        "description": {
+          "type": ["string", "null"]
+        },
+        "max": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "$ref": "#/definitions/WarpVarPlaceholder"
+            }
+          ]
+        },
+        "min": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "$ref": "#/definitions/WarpVarPlaceholder"
+            }
+          ]
+        },
+        "modifier": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "options": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "pattern": {
+          "type": "string"
+        },
+        "patternDescription": {
+          "type": "string"
+        },
+        "position": {
+          "$ref": "#/definitions/WarpActionInputPosition"
+        },
+        "required": {
+          "type": "boolean"
+        },
+        "source": {
+          "$ref": "#/definitions/WarpActionInputSource"
+        },
+        "type": {
+          "$ref": "#/definitions/WarpActionInputType"
+        }
+      },
+      "required": ["name", "type", "position", "source"],
+      "type": "object"
+    },
+    "WarpActionInputPosition": {
+      "enum": [
+        "receiver",
+        "value",
+        "transfer",
+        "arg:1",
+        "arg:2",
+        "arg:3",
+        "arg:4",
+        "arg:5",
+        "arg:6",
+        "arg:7",
+        "arg:8",
+        "arg:9",
+        "arg:10",
+        "data"
+      ],
+      "type": "string"
+    },
+    "WarpActionInputSource": {
+      "enum": ["field", "query", "user_wallet"],
+      "type": "string"
+    },
+    "WarpActionInputType": {
+      "type": "string"
+    },
+    "WarpActionType": {
+      "enum": ["transfer", "contract", "query", "collect", "link"],
+      "type": "string"
+    },
+    "WarpChain": {
+      "type": "string"
+    },
+    "WarpCollectAction": {
+      "additionalProperties": false,
+      "properties": {
+        "description": {
+          "type": ["string", "null"]
+        },
+        "destination": {
+          "additionalProperties": false,
+          "properties": {
+            "headers": {
+              "additionalProperties": {
+                "type": "string"
+              },
+              "type": "object"
+            },
+            "method": {
+              "enum": ["GET", "POST"],
+              "type": "string"
+            },
+            "url": {
+              "type": "string"
+            }
+          },
+          "required": ["url", "method", "headers"],
+          "type": "object"
+        },
+        "inputs": {
+          "items": {
+            "$ref": "#/definitions/WarpActionInput"
+          },
+          "type": "array"
+        },
+        "label": {
+          "type": "string"
+        },
+        "next": {
+          "type": "string"
+        },
+        "type": {
+          "$ref": "#/definitions/WarpActionType"
+        }
+      },
+      "required": ["type", "label", "destination"],
+      "type": "object"
+    },
+    "WarpContractAction": {
+      "additionalProperties": false,
+      "properties": {
+        "address": {
+          "type": "string"
+        },
+        "args": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "chain": {
+          "$ref": "#/definitions/WarpChain"
+        },
+        "description": {
+          "type": ["string", "null"]
+        },
+        "func": {
+          "type": ["string", "null"]
+        },
+        "gasLimit": {
+          "type": "number"
+        },
+        "inputs": {
+          "items": {
+            "$ref": "#/definitions/WarpActionInput"
+          },
+          "type": "array"
+        },
+        "label": {
+          "type": "string"
+        },
+        "next": {
+          "type": "string"
+        },
+        "transfers": {
+          "items": {
+            "$ref": "#/definitions/WarpContractActionTransfer"
+          },
+          "type": "array"
+        },
+        "type": {
+          "$ref": "#/definitions/WarpActionType"
+        },
+        "value": {
+          "type": "string"
+        }
+      },
+      "required": ["type", "label", "address", "func", "args", "gasLimit"],
+      "type": "object"
+    },
+    "WarpContractActionTransfer": {
+      "additionalProperties": false,
+      "properties": {
+        "amount": {
+          "type": "string"
+        },
+        "nonce": {
+          "type": "number"
+        },
+        "token": {
+          "type": "string"
+        }
+      },
+      "required": ["token"],
+      "type": "object"
+    },
+    "WarpLinkAction": {
+      "additionalProperties": false,
+      "properties": {
+        "description": {
+          "type": ["string", "null"]
+        },
+        "inputs": {
+          "items": {
+            "$ref": "#/definitions/WarpActionInput"
+          },
+          "type": "array"
+        },
+        "label": {
+          "type": "string"
+        },
+        "type": {
+          "$ref": "#/definitions/WarpActionType"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "required": ["type", "label", "url"],
+      "type": "object"
+    },
+    "WarpMeta": {
+      "additionalProperties": false,
+      "properties": {
+        "createdAt": {
+          "type": "string"
+        },
+        "creator": {
+          "type": "string"
+        },
+        "hash": {
+          "type": "string"
+        }
+      },
+      "required": ["hash", "creator", "createdAt"],
+      "type": "object"
+    },
+    "WarpQueryAction": {
+      "additionalProperties": false,
+      "properties": {
+        "abi": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        },
+        "args": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "chain": {
+          "$ref": "#/definitions/WarpChain"
+        },
+        "description": {
+          "type": ["string", "null"]
+        },
+        "func": {
+          "type": "string"
+        },
+        "inputs": {
+          "items": {
+            "$ref": "#/definitions/WarpActionInput"
+          },
+          "type": "array"
+        },
+        "label": {
+          "type": "string"
+        },
+        "type": {
+          "$ref": "#/definitions/WarpActionType"
+        }
+      },
+      "required": ["type", "label", "address", "func", "args"],
+      "type": "object"
+    },
+    "WarpTransferAction": {
+      "additionalProperties": false,
+      "properties": {
+        "address": {
+          "type": "string"
+        },
+        "chain": {
+          "$ref": "#/definitions/WarpChain"
+        },
+        "data": {
+          "type": "string"
+        },
+        "description": {
+          "type": ["string", "null"]
+        },
+        "inputs": {
+          "items": {
+            "$ref": "#/definitions/WarpActionInput"
+          },
+          "type": "array"
+        },
+        "label": {
+          "type": "string"
+        },
+        "next": {
+          "type": "string"
+        },
+        "transfers": {
+          "items": {
+            "$ref": "#/definitions/WarpContractActionTransfer"
+          },
+          "type": "array"
+        },
+        "type": {
+          "$ref": "#/definitions/WarpActionType"
+        },
+        "value": {
+          "type": "string"
+        }
+      },
+      "required": ["type", "label"],
+      "type": "object"
+    },
+    "WarpVarPlaceholder": {
+      "type": "string"
+    }
+  }
+}
