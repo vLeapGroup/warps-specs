@@ -1,0 +1,101 @@
+{
+  "protocol": "warp:1.2.0",
+  "name": "xAlliance: Grant Request",
+  "title": "Request a Grant",
+  "description": "Some description about the grant request.",
+  "bot": "Guide the user through the grant request process.",
+  "vars": {
+    "COLLECT_API_URL": "env:COLLECT_API_URL",
+    "COLLECT_API_KEY": "env:COLLECT_API_KEY"
+  },
+  "actions": [
+    {
+      "type": "collect",
+      "label": "Submit now",
+      "destination": {
+        "url": "{{COLLECT_API_URL}}",
+        "method": "POST",
+        "headers": {
+          "Authorization": "Bearer {{COLLECT_API_KEY}}"
+        }
+      },
+      "inputs": [
+        {
+          "name": "Name",
+          "as": "name",
+          "bot": "The name of the user.",
+          "type": "string",
+          "position": "arg:1",
+          "source": "field",
+          "required": true
+        },
+        {
+          "name": "Email",
+          "as": "email",
+          "bot": "The email address of the user.",
+          "type": "string",
+          "position": "arg:2",
+          "source": "field",
+          "required": true
+        },
+        {
+          "name": "Telegram Username",
+          "as": "telegramUsername",
+          "bot": "The Telegram username of the user.",
+          "type": "string",
+          "position": "arg:3",
+          "source": "field",
+          "required": true
+        },
+        {
+          "name": "X (Twitter) Username",
+          "as": "xUsername",
+          "bot": "The X (Twitter) username of the user.",
+          "type": "string",
+          "position": "arg:4",
+          "source": "field",
+          "required": true
+        },
+        {
+          "name": "Discord Username",
+          "as": "discordUsername",
+          "bot": "The Discord username of the user.",
+          "type": "string",
+          "position": "arg:5",
+          "source": "field",
+          "required": true
+        },
+        {
+          "name": "Proof of Work",
+          "description": "Please provide any projects, work, and references that can help us get to know you and your work a little bit better. Include links to your best moments.",
+          "as": "proofOfWork",
+          "bot": "To determine the users previous work and experience.",
+          "type": "string",
+          "position": "arg:6",
+          "source": "field",
+          "required": true
+        },
+        {
+          "name": "Project Title",
+          "description": "Please provide the title of the project you are applying for.",
+          "as": "projectTitle",
+          "bot": "About the project the user is applying for.",
+          "type": "string",
+          "position": "arg:7",
+          "source": "field",
+          "required": true
+        },
+        {
+          "name": "Idea Oneline",
+          "description": "Please provide a one-liner about the project you are applying for.",
+          "as": "ideaOneline",
+          "bot": "About the project the user is applying for.",
+          "type": "string",
+          "position": "arg:8",
+          "source": "field",
+          "required": true
+        }
+      ]
+    }
+  ]
+}
