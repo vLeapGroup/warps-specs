@@ -1,0 +1,26 @@
+{
+  "protocol": "warp:1.3.0",
+  "name": "MultiversX: Narrative",
+  "title": "The MultiversX Narrative ",
+  "preview": "https://vleap.io/images/external/warps/momentum-podcast.png",
+  "description": "What do you think is the most interesting and attractive narrative for MultiversX?",
+  "actions": [
+    {
+      "type": "transfer",
+      "label": "Submit now",
+      "address": "erd1qs63mw9997vkdahyqhtfmh0e36gcgyyppwrl8xdrh4ykjyfvfl3qhe56cx",
+      "inputs": [
+        {
+          "name": "Narrative",
+          "type": "string",
+          "position": "data",
+          "source": "field",
+          "required": true
+        }
+      ]
+    }
+  ],
+  "messages": {
+    "success": "Your narrative has been submitted!"
+  }
+}
