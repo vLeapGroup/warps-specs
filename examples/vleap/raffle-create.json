@@ -1,5 +1,5 @@
 {
-  "protocol": "warp:0.1.0",
+  "protocol": "warp:1.3.0",
   "name": "Raffle: Create",
   "title": "Create a new Raffle",
   "description": "<p>Create a simple raffle and receive its unique ID. This ID can then be used to create a Participation Warp.</p>",
@@ -10,18 +10,18 @@
       "label": "Create now",
       "address": "erd1qqqqqqqqqqqqqpgqht0nht73ewg4mxr8nd89v5p8cfryjjlfl3tskqtqpw",
       "func": "createRaffle",
-      "args": [],
+      "args": ["biguint:1000000000000000"],
       "gasLimit": 10000000,
-      "inputs": [
-        {
-          "name": "Min. Participation Fee (eGold)",
-          "type": "biguint",
-          "position": "arg:1",
-          "source": "field",
-          "required": true,
-          "modifier": "scale:18"
-        }
-      ]
+      "abi": "hash:1994371711aa2541fa0b36f79659bc97decc4baadcb69162aeadaf002716c383",
+      "inputs": []
     }
-  ]
+  ],
+  "results": {
+    "RAFFLE_ID": "out.1"
+  },
+  "messages": {
+    "success": "Raffle with ID {{RAFFLE_ID}} created successfully!",
+    "error": "Failed to create raffle. Please try again."
+  },
+  "next": "participate-raffle?raffle={{RAFFLE_ID}}"
 }
