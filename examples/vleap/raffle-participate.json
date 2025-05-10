@@ -6,8 +6,7 @@
   "preview": "https://vleap.io/images/external/warps/raffle-participate.jpg",
   "vars": {
     "RAFFLE_ID": "query:raffle",
-    "EXTRA_INFO_LABEL": "query:extra-info",
-    "ENTRY_FEE": "query:entry-fee"
+    "EXTRA_INFO_LABEL": "query:extra-info"
   },
   "actions": [
     {
@@ -16,7 +15,7 @@
       "address": "erd1qqqqqqqqqqqqqpgqht0nht73ewg4mxr8nd89v5p8cfryjjlfl3tskqtqpw",
       "func": "participate",
       "args": ["uint64:{{RAFFLE_ID}}"],
-      "value": "{{ENTRY_FEE}}",
+      "value": "biguint:1000000000000000",
       "gasLimit": 10000000,
       "inputs": [
         {
