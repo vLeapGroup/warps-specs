@@ -139,7 +139,7 @@
           "$ref": "#/definitions/WarpActionInputType"
         }
       },
-      "required": ["name", "type", "position", "source"],
+      "required": ["name", "type", "source"],
       "type": "object"
     },
     "WarpActionInputPosition": {
