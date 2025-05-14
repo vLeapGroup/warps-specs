@@ -1,0 +1,24 @@
+{
+  "protocol": "warp:1.3.0",
+  "name": "Coffee Tip",
+  "title": "Tip me a coffee",
+  "description": "Tip me a coffee to support my work.",
+  "preview": "https://i.ibb.co/KcfzWRGX/5-B55239-A-88-B2-46-D6-B940-03-FABAF20-E4-F.png",
+  "actions": [
+    {
+      "type": "transfer",
+      "label": "Tip now",
+      "address": "erd1vgsjr29269khudx8ej5znvasa3g0axs0kz6k62yrwsgsl0cj8sdsxjflpe",
+      "inputs": [
+        {
+          "name": "Amount",
+          "type": "biguint",
+          "position": "value",
+          "source": "field",
+          "required": true,
+          "modifier": "scale:18"
+        }
+      ]
+    }
+  ]
+}
