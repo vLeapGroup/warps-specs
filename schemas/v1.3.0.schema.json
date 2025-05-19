@@ -191,14 +191,14 @@
               "type": "object"
             },
             "method": {
-              "enum": ["GET", "POST"],
+              "enum": ["GET", "POST", "PUT", "DELETE"],
               "type": "string"
             },
             "url": {
               "type": "string"
             }
           },
-          "required": ["url", "method", "headers"],
+          "required": ["url"],
           "type": "object"
         },
         "inputs": {
