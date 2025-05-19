@@ -162,7 +162,7 @@
       "type": "string"
     },
     "WarpActionInputSource": {
-      "enum": ["field", "query", "user_wallet"],
+      "enum": ["field", "query", "user:wallet"],
       "type": "string"
     },
     "WarpActionInputType": {
