@@ -178,6 +178,9 @@
     "WarpCollectAction": {
       "additionalProperties": false,
       "properties": {
+        "chain": {
+          "$ref": "#/definitions/WarpChain"
+        },
         "description": {
           "type": ["string", "null"]
         },
@@ -294,6 +297,9 @@
     "WarpLinkAction": {
       "additionalProperties": false,
       "properties": {
+        "chain": {
+          "$ref": "#/definitions/WarpChain"
+        },
         "description": {
           "type": ["string", "null"]
         },
