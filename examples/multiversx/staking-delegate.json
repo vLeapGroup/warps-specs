@@ -1,14 +1,16 @@
 {
-  "protocol": "warp:0.1.0",
-  "name": "Stake Egld",
-  "title": "Ready to stake EGLD with us?",
-  "description": "Stake with us to enable extra benefits across all our platforms.",
-  "preview": "https://cdn.prod.website-files.com/6597cc7be68d63ec0c8ce33f/660441460ae47e18853dd348_staking-v4.webp",
+  "protocol": "warp:2.0.0",
+  "name": "MultiversX Staking: Stake",
+  "title": "Stake eGold",
+  "description": "Stake eGold to secure the network and earn rewards.",
+  "vars": {
+    "CONTRACT_ADDRESS": "query:contract"
+  },
   "actions": [
     {
       "type": "contract",
       "label": "Stake now",
-      "address": "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqplllllscktaww",
+      "address": "{{CONTRACT_ADDRESS}}",
       "func": "delegate",
       "args": [],
       "gasLimit": 10000000,
@@ -31,5 +33,8 @@
       "description": "Find more information about staking eGold.",
       "url": "https://multiversx.com/egld"
     }
-  ]
+  ],
+  "messages": {
+    "success": "eGold staked successfully"
+  }
 }

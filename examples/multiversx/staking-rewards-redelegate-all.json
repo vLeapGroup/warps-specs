@@ -1,0 +1,22 @@
+{
+  "protocol": "warp:2.0.0",
+  "name": "MultiversX: Delegations",
+  "title": "Retrieve Delegations",
+  "description": "Retrieve the delegations of a user.",
+  "vars": {
+    "USER_WALLET": "user:wallet"
+  },
+  "actions": [
+    {
+      "type": "collect",
+      "label": "Retrieve Delegations",
+      "destination": {
+        "url": "https://devnet-api.multiversx.com/accounts/{{USER_WALLET}}/delegation"
+      }
+    }
+  ],
+  "results": {
+    "DELEGATIONS": "out"
+  },
+  "next": "staking-rewards-redelegate?contract={{DELEGATIONS[].contract}}"
+}

@@ -1,0 +1,22 @@
+{
+  "protocol": "warp:2.0.0",
+  "name": "MultiversX Staking: Claim All",
+  "title": "Claim All Staking Rewards",
+  "description": "Claim all staking rewards for the current user.",
+  "vars": {
+    "USER_WALLET": "user:wallet"
+  },
+  "actions": [
+    {
+      "type": "collect",
+      "label": "Check rewards",
+      "destination": {
+        "url": "https://devnet-api.multiversx.com/accounts/{{USER_WALLET}}/delegation"
+      }
+    }
+  ],
+  "results": {
+    "DELEGATIONS": "out"
+  },
+  "next": "staking-rewards-claim?contract={{DELEGATIONS[].contract}}"
+}

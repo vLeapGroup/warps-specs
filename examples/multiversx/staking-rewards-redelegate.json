@@ -1,0 +1,19 @@
+{
+  "protocol": "warp:2.0.0",
+  "name": "MultiversX Staking: Restake",
+  "title": "Restake",
+  "description": "Restake staking rewards for the current user.",
+  "vars": {
+    "CONTRACT_ADDRESS": "query:contract"
+  },
+  "actions": [
+    {
+      "type": "contract",
+      "label": "Restake now",
+      "address": "{{CONTRACT_ADDRESS}}",
+      "func": "reDelegateRewards",
+      "args": [],
+      "gasLimit": 10000000
+    }
+  ]
+}
