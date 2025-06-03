@@ -1,0 +1,34 @@
+{
+  "protocol": "warp:2.0.0",
+  "name": "xExchange: Swap eGold to COLS",
+  "title": "Swap eGold to COLS",
+  "description": "Swap eGold to COLS on xExchange.",
+  "actions": [
+    {
+      "type": "contract",
+      "label": "Swap now",
+      "address": "erd1qqqqqqqqqqqqqpgq3r2vzqe89x23lryqmlp9xynf9t46qnpa2jpsrh63az",
+      "func": "swapTokensFixedInput",
+      "args": ["string:COLS-9d91b7", "biguint:1"],
+      "gasLimit": 10000000,
+      "inputs": [
+        {
+          "name": "WEGLD Amount",
+          "type": "esdt",
+          "position": "transfer",
+          "source": "field",
+          "required": true,
+          "min": 1,
+          "options": ["WEGLD-a28c59"]
+        }
+      ]
+    }
+  ],
+  "results": {
+    "OUTPUT_TOKENS": "out.multiPairSwap.5"
+  },
+  "messages": {
+    "success": "Swapped successful and received {{OUTPUT_TOKENS}}"
+  },
+  "next": "peerme-earn-distribute?"
+}

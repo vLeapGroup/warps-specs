@@ -24,5 +24,11 @@
         }
       ]
     }
-  ]
+  ],
+  "results": {
+    "OUTPUT_TOKENS": "out.multiPairSwap.5"
+  },
+  "messages": {
+    "success": "Swapped successful and received {{OUTPUT_TOKENS}}"
+  }
 }
