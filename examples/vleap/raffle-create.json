@@ -3,7 +3,7 @@
   "name": "Raffle: Create",
   "title": "Create a new Raffle",
   "description": "<p>Create a simple raffle and receive its unique ID. This ID can then be used to create a Participation Warp.</p>",
-  "preview": "https://vleap.io/images/external/warps/raffle-create.jpg",
+  "preview": "https://vleap.ai/images/external/warps/raffle-create.jpg",
   "actions": [
     {
       "type": "contract",

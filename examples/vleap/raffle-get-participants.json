@@ -3,7 +3,7 @@
   "name": "Raffle: Get Participants",
   "title": "Get Participants",
   "description": "<p>Get the participants of the raffle sent to you. ID: {{RAFFLE_ID}}</p>",
-  "preview": "https://vleap.io/images/external/warps/raffle-participate.jpg",
+  "preview": "https://vleap.ai/images/external/warps/raffle-participate.jpg",
   "vars": {
     "RAFFLE_ID": "query:raffle"
   },

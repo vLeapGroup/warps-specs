@@ -10,6 +10,6 @@ Warps are on-chain data structures that provide all necessary information to con
 
 Warps can be shared through any medium capable of encoding or displaying URLs, including web platforms, QR codes, NFC tags, etc.
 
-- **Read the Documentation:** https://docs.vleap.io/warps/general
-- **Use SDKs:** https://docs.vleap.io/warps/sdks
-- **Learn how to integrate Warps:** https://docs.vleap.io/warps/integrations
+- **Read the Documentation:** https://docs.vleap.ai/warps/general
+- **Use SDKs:** https://docs.vleap.ai/warps/sdks
+- **Learn how to integrate Warps:** https://docs.vleap.ai/warps/integrations

@@ -2,7 +2,7 @@
   "protocol": "warp:1.0.0",
   "name": "Momentum: Proof of Pod",
   "title": "Claim your Proof of Pod",
-  "preview": "https://vleap.io/images/external/warps/momentum-podcast.png",
+  "preview": "https://vleap.ai/images/external/warps/momentum-podcast.png",
   "description": "Sign the transaction to claim your Proof of Pod.",
   "actions": [
     {

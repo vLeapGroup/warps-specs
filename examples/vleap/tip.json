@@ -3,7 +3,7 @@
   "name": "Tipping: Tip",
   "title": "Tip a User",
   "description": "Tip a user with any token.",
-  "preview": "https://vleap.io/images/external/warps/tip.jpg",
+  "preview": "https://vleap.ai/images/external/warps/tip.jpg",
   "vars": {
     "RECEIVER": "query:to"
   },

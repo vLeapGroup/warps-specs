@@ -3,7 +3,7 @@
   "name": "Stake with xMoney Guild",
   "title": "Stake with the vLeap Guild on xMoney",
   "description": "<p>Easily stake with <a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"https://guilds.xmoney.com/guilds/erd1qqqqqqqqqqqqqpgq2kwtwtlcv297v45kqakyl0x8ddytvv9dhu4qzprdfk\">our Guild</a> on xMoney.</p>",
-  "preview": "https://vleap.io/images/external/warp-xmoney.png",
+  "preview": "https://vleap.ai/images/external/warp-xmoney.png",
   "actions": [
     {
       "type": "contract",

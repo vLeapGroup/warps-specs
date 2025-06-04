@@ -3,7 +3,7 @@
   "name": "Pause Token",
   "title": "Pause all operations of a token.",
   "description": "The manager of an ESDT token may choose to suspend all transactions of the token, except minting, freezing/unfreezing and wiping.",
-  "preview": "https://vleap.io/images/external/warps/multiversx-docs.jpg",
+  "preview": "https://vleap.ai/images/external/warps/multiversx-docs.jpg",
   "actions": [
     {
       "type": "contract",

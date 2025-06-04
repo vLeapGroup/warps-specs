@@ -3,7 +3,7 @@
   "name": "Unfreeze Token",
   "title": "Unfreeze the tokens owned by an account.",
   "description": "The manager of an ESDT token may unfreeze the tokens held by a specific Account. As a consequence, the tokens may be transferred to or from the frozen Account.",
-  "preview": "https://vleap.io/images/external/warps/multiversx-docs.jpg",
+  "preview": "https://vleap.ai/images/external/warps/multiversx-docs.jpg",
   "actions": [
     {
       "type": "contract",

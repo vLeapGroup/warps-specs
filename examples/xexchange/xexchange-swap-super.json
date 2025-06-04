@@ -3,7 +3,7 @@
   "name": "xExchange: Swap eGold to SUPER",
   "title": "Swap eGold to SUPER",
   "description": "Swap eGold to SUPER on xExchange.",
-  "preview": "https://vleap.io/images/external/warps/xexchange-swap.png",
+  "preview": "https://vleap.ai/images/external/warps/xexchange-swap.png",
   "actions": [
     {
       "type": "contract",
