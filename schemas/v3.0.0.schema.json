@@ -278,7 +278,7 @@
         },
         "transfers": {
           "items": {
-            "$ref": "#/definitions/WarpContractActionTransfer"
+            "type": "string"
           },
           "type": "array"
         },
@@ -289,23 +289,7 @@
           "type": "string"
         }
       },
-      "required": ["type", "label", "address", "func", "args", "gasLimit"],
-      "type": "object"
-    },
-    "WarpContractActionTransfer": {
-      "additionalProperties": false,
-      "properties": {
-        "amount": {
-          "type": "string"
-        },
-        "nonce": {
-          "type": "number"
-        },
-        "token": {
-          "type": "string"
-        }
-      },
-      "required": ["token"],
+      "required": ["type", "label", "gasLimit"],
       "type": "object"
     },
     "WarpLinkAction": {
@@ -339,6 +323,9 @@
     "WarpMeta": {
       "additionalProperties": false,
       "properties": {
+        "chain": {
+          "$ref": "#/definitions/WarpChain"
+        },
         "createdAt": {
           "type": "string"
         },
@@ -349,7 +336,7 @@
           "type": "string"
         }
       },
-      "required": ["hash", "creator", "createdAt"],
+      "required": ["chain", "hash", "creator", "createdAt"],
       "type": "object"
     },
     "WarpQueryAction": {
@@ -392,7 +379,7 @@
           "$ref": "#/definitions/WarpActionType"
         }
       },
-      "required": ["type", "label", "address", "func", "args"],
+      "required": ["type", "label"],
       "type": "object"
     },
     "WarpResulutionPath": {
@@ -427,7 +414,7 @@
         },
         "transfers": {
           "items": {
-            "$ref": "#/definitions/WarpContractActionTransfer"
+            "type": "string"
           },
           "type": "array"
         },
