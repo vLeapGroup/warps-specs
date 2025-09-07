@@ -156,27 +156,10 @@
       "type": "object"
     },
     "WarpActionInputPosition": {
-      "enum": [
-        "receiver",
-        "value",
-        "transfer",
-        "arg:1",
-        "arg:2",
-        "arg:3",
-        "arg:4",
-        "arg:5",
-        "arg:6",
-        "arg:7",
-        "arg:8",
-        "arg:9",
-        "arg:10",
-        "data",
-        "chain"
-      ],
       "type": "string"
     },
     "WarpActionInputSource": {
-      "enum": ["field", "query", "user:wallet"],
+      "enum": ["field", "query", "user:wallet", "hidden"],
       "type": "string"
     },
     "WarpActionInputType": {
