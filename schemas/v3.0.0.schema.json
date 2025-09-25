@@ -223,6 +223,9 @@
         "next": {
           "type": "string"
         },
+        "primary": {
+          "type": "boolean"
+        },
         "type": {
           "$ref": "#/definitions/WarpActionType"
         }
@@ -269,6 +272,9 @@
         "next": {
           "type": "string"
         },
+        "primary": {
+          "type": "boolean"
+        },
         "transfers": {
           "items": {
             "type": "string"
@@ -302,6 +308,9 @@
         },
         "label": {
           "type": "string"
+        },
+        "primary": {
+          "type": "boolean"
         },
         "type": {
           "$ref": "#/definitions/WarpActionType"
@@ -368,6 +377,9 @@
         "next": {
           "type": "string"
         },
+        "primary": {
+          "type": "boolean"
+        },
         "type": {
           "$ref": "#/definitions/WarpActionType"
         }
@@ -407,6 +419,9 @@
         },
         "next": {
           "type": "string"
+        },
+        "primary": {
+          "type": "boolean"
         },
         "transfers": {
           "items": {
