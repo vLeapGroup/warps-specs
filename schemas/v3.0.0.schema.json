@@ -14,6 +14,9 @@
         "bot": {
           "type": "string"
         },
+        "chain": {
+          "$ref": "#/definitions/WarpChain"
+        },
         "description": {
           "type": ["string", "null"]
         },
@@ -54,7 +57,14 @@
           "type": "object"
         }
       },
-      "required": ["protocol", "name", "title", "description", "actions"],
+      "required": [
+        "protocol",
+        "chain",
+        "name",
+        "title",
+        "description",
+        "actions"
+      ],
       "type": "object"
     },
     "WarpAction": {
@@ -175,8 +185,8 @@
     "WarpCollectAction": {
       "additionalProperties": false,
       "properties": {
-        "chain": {
-          "$ref": "#/definitions/WarpChain"
+        "auto": {
+          "type": "boolean"
         },
         "description": {
           "type": ["string", "null"]
@@ -235,8 +245,8 @@
           },
           "type": "array"
         },
-        "chain": {
-          "$ref": "#/definitions/WarpChain"
+        "auto": {
+          "type": "boolean"
         },
         "description": {
           "type": ["string", "null"]
@@ -278,8 +288,8 @@
     "WarpLinkAction": {
       "additionalProperties": false,
       "properties": {
-        "chain": {
-          "$ref": "#/definitions/WarpChain"
+        "auto": {
+          "type": "boolean"
         },
         "description": {
           "type": ["string", "null"]
@@ -337,8 +347,8 @@
           },
           "type": "array"
         },
-        "chain": {
-          "$ref": "#/definitions/WarpChain"
+        "auto": {
+          "type": "boolean"
         },
         "description": {
           "type": ["string", "null"]
@@ -373,6 +383,9 @@
       "properties": {
         "address": {
           "type": "string"
+        },
+        "auto": {
+          "type": "boolean"
         },
         "chain": {
           "$ref": "#/definitions/WarpChain"
