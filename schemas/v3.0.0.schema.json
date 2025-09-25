@@ -57,14 +57,7 @@
           "type": "object"
         }
       },
-      "required": [
-        "protocol",
-        "chain",
-        "name",
-        "title",
-        "description",
-        "actions"
-      ],
+      "required": ["protocol", "name", "title", "description", "actions"],
       "type": "object"
     },
     "WarpAction": {
@@ -398,9 +391,6 @@
         },
         "auto": {
           "type": "boolean"
-        },
-        "chain": {
-          "$ref": "#/definitions/WarpChain"
         },
         "data": {
           "type": "string"
