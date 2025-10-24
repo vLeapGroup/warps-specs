@@ -11,6 +11,9 @@
           },
           "type": "array"
         },
+        "alerts": {
+          "$ref": "#/definitions/WarpAlerts"
+        },
         "bot": {
           "type": "string"
         },
@@ -188,6 +191,31 @@
     "WarpActionType": {
       "enum": ["transfer", "contract", "query", "collect", "link"],
       "type": "string"
+    },
+    "WarpAlert": {
+      "additionalProperties": false,
+      "properties": {
+        "action": {
+          "type": "string"
+        },
+        "body": {
+          "$ref": "#/definitions/WarpText"
+        },
+        "subject": {
+          "$ref": "#/definitions/WarpText"
+        },
+        "trigger": {
+          "type": "string"
+        }
+      },
+      "required": ["trigger", "subject", "body"],
+      "type": "object"
+    },
+    "WarpAlerts": {
+      "additionalProperties": {
+        "$ref": "#/definitions/WarpAlert"
+      },
+      "type": "object"
     },
     "WarpChain": {
       "type": "string"
