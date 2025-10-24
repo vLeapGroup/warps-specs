@@ -18,7 +18,14 @@
           "$ref": "#/definitions/WarpChain"
         },
         "description": {
-          "type": ["string", "null"]
+          "anyOf": [
+            {
+              "$ref": "#/definitions/WarpText"
+            },
+            {
+              "type": "null"
+            }
+          ]
         },
         "messages": {
           "additionalProperties": {
@@ -48,7 +55,7 @@
           "type": "object"
         },
         "title": {
-          "type": "string"
+          "$ref": "#/definitions/WarpText"
         },
         "vars": {
           "additionalProperties": {
@@ -92,7 +99,17 @@
           "type": ["string", "number", "boolean"]
         },
         "description": {
-          "type": ["string", "null"]
+          "anyOf": [
+            {
+              "$ref": "#/definitions/WarpText"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "label": {
+          "$ref": "#/definitions/WarpText"
         },
         "max": {
           "anyOf": [
@@ -140,7 +157,7 @@
           "type": "string"
         },
         "patternDescription": {
-          "type": "string"
+          "$ref": "#/definitions/WarpText"
         },
         "position": {
           "$ref": "#/definitions/WarpActionInputPosition"
@@ -182,7 +199,14 @@
           "type": "boolean"
         },
         "description": {
-          "type": ["string", "null"]
+          "anyOf": [
+            {
+              "$ref": "#/definitions/WarpText"
+            },
+            {
+              "type": "null"
+            }
+          ]
         },
         "destination": {
           "additionalProperties": false,
@@ -211,7 +235,7 @@
           "type": "array"
         },
         "label": {
-          "type": "string"
+          "$ref": "#/definitions/WarpText"
         },
         "next": {
           "type": "string"
@@ -245,7 +269,14 @@
           "type": "boolean"
         },
         "description": {
-          "type": ["string", "null"]
+          "anyOf": [
+            {
+              "$ref": "#/definitions/WarpText"
+            },
+            {
+              "type": "null"
+            }
+          ]
         },
         "func": {
           "type": ["string", "null"]
@@ -260,7 +291,7 @@
           "type": "array"
         },
         "label": {
-          "type": "string"
+          "$ref": "#/definitions/WarpText"
         },
         "next": {
           "type": "string"
@@ -284,6 +315,12 @@
       "required": ["type", "label", "gasLimit"],
       "type": "object"
     },
+    "WarpI18nText": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "type": "object"
+    },
     "WarpLinkAction": {
       "additionalProperties": false,
       "properties": {
@@ -291,7 +328,14 @@
           "type": "boolean"
         },
         "description": {
-          "type": ["string", "null"]
+          "anyOf": [
+            {
+              "$ref": "#/definitions/WarpText"
+            },
+            {
+              "type": "null"
+            }
+          ]
         },
         "inputs": {
           "items": {
@@ -300,7 +344,7 @@
           "type": "array"
         },
         "label": {
-          "type": "string"
+          "$ref": "#/definitions/WarpText"
         },
         "primary": {
           "type": "boolean"
@@ -353,7 +397,14 @@
           "type": "boolean"
         },
         "description": {
-          "type": ["string", "null"]
+          "anyOf": [
+            {
+              "$ref": "#/definitions/WarpText"
+            },
+            {
+              "type": "null"
+            }
+          ]
         },
         "func": {
           "type": "string"
@@ -365,7 +416,7 @@
           "type": "array"
         },
         "label": {
-          "type": "string"
+          "$ref": "#/definitions/WarpText"
         },
         "next": {
           "type": "string"
@@ -383,6 +434,16 @@
     "WarpResulutionPath": {
       "type": "string"
     },
+    "WarpText": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "$ref": "#/definitions/WarpI18nText"
+        }
+      ]
+    },
     "WarpTransferAction": {
       "additionalProperties": false,
       "properties": {
@@ -396,7 +457,14 @@
           "type": "string"
         },
         "description": {
-          "type": ["string", "null"]
+          "anyOf": [
+            {
+              "$ref": "#/definitions/WarpText"
+            },
+            {
+              "type": "null"
+            }
+          ]
         },
         "inputs": {
           "items": {
@@ -405,7 +473,7 @@
           "type": "array"
         },
         "label": {
-          "type": "string"
+          "$ref": "#/definitions/WarpText"
         },
         "next": {
           "type": "string"
