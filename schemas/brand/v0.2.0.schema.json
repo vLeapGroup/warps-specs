@@ -1,0 +1,115 @@
+{
+  "$ref": "#/definitions/WarpBrand",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "WarpBrand": {
+      "additionalProperties": false,
+      "properties": {
+        "colors": {
+          "$ref": "#/definitions/WarpBrandColors"
+        },
+        "cta": {
+          "$ref": "#/definitions/WarpBrandCta"
+        },
+        "description": {
+          "$ref": "#/definitions/WarpText"
+        },
+        "logo": {
+          "type": "string"
+        },
+        "meta": {
+          "$ref": "#/definitions/WarpMeta"
+        },
+        "name": {
+          "$ref": "#/definitions/WarpText"
+        },
+        "protocol": {
+          "type": "string"
+        },
+        "urls": {
+          "$ref": "#/definitions/WarpBrandUrls"
+        }
+      },
+      "required": ["protocol", "name", "description", "logo"],
+      "type": "object"
+    },
+    "WarpBrandColors": {
+      "additionalProperties": false,
+      "properties": {
+        "primary": {
+          "type": "string"
+        },
+        "secondary": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "WarpBrandCta": {
+      "additionalProperties": false,
+      "properties": {
+        "description": {
+          "$ref": "#/definitions/WarpText"
+        },
+        "label": {
+          "$ref": "#/definitions/WarpText"
+        },
+        "title": {
+          "$ref": "#/definitions/WarpText"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "required": ["title", "description", "label", "url"],
+      "type": "object"
+    },
+    "WarpBrandUrls": {
+      "additionalProperties": false,
+      "properties": {
+        "web": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "WarpChain": {
+      "type": "string"
+    },
+    "WarpI18nText": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "type": "object"
+    },
+    "WarpMeta": {
+      "additionalProperties": false,
+      "properties": {
+        "chain": {
+          "$ref": "#/definitions/WarpChain"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "creator": {
+          "type": "string"
+        },
+        "hash": {
+          "type": "string"
+        }
+      },
+      "required": ["chain", "hash", "creator", "createdAt"],
+      "type": "object"
+    },
+    "WarpText": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "$ref": "#/definitions/WarpI18nText"
+        }
+      ]
+    }
+  }
+}
