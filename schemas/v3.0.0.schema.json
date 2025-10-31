@@ -201,6 +201,9 @@
         "body": {
           "$ref": "#/definitions/WarpText"
         },
+        "label": {
+          "$ref": "#/definitions/WarpText"
+        },
         "subject": {
           "$ref": "#/definitions/WarpText"
         },
@@ -208,7 +211,7 @@
           "type": "string"
         }
       },
-      "required": ["trigger", "subject", "body"],
+      "required": ["label", "trigger", "subject", "body"],
       "type": "object"
     },
     "WarpAlerts": {
