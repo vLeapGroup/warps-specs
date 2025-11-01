@@ -15,7 +15,7 @@
           "$ref": "#/definitions/WarpText"
         },
         "logo": {
-          "type": "string"
+          "$ref": "#/definitions/WarpBrandLogo"
         },
         "meta": {
           "$ref": "#/definitions/WarpMeta"
@@ -62,6 +62,29 @@
         }
       },
       "required": ["title", "description", "label", "url"],
+      "type": "object"
+    },
+    "WarpBrandLogo": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "$ref": "#/definitions/WarpBrandLogoThemed"
+        }
+      ]
+    },
+    "WarpBrandLogoThemed": {
+      "additionalProperties": false,
+      "properties": {
+        "dark": {
+          "type": "string"
+        },
+        "light": {
+          "type": "string"
+        }
+      },
+      "required": ["light", "dark"],
       "type": "object"
     },
     "WarpBrandUrls": {
