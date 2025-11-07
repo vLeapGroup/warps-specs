@@ -51,6 +51,12 @@
         "protocol": {
           "type": "string"
         },
+        "related": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
         "results": {
           "additionalProperties": {
             "$ref": "#/definitions/WarpResulutionPath"
@@ -150,7 +156,7 @@
             },
             {
               "additionalProperties": {
-                "type": "string"
+                "$ref": "#/definitions/WarpText"
               },
               "type": "object"
             }
@@ -404,9 +410,12 @@
         },
         "hash": {
           "type": "string"
+        },
+        "identifier": {
+          "type": "string"
         }
       },
-      "required": ["chain", "hash", "creator", "createdAt"],
+      "required": ["chain", "identifier", "hash", "creator", "createdAt"],
       "type": "object"
     },
     "WarpQueryAction": {
