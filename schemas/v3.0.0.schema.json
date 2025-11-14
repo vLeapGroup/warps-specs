@@ -45,6 +45,12 @@
         "next": {
           "type": "string"
         },
+        "output": {
+          "additionalProperties": {
+            "$ref": "#/definitions/WarpResulutionPath"
+          },
+          "type": "object"
+        },
         "preview": {
           "type": "string"
         },
@@ -56,12 +62,6 @@
             "type": "string"
           },
           "type": "array"
-        },
-        "results": {
-          "additionalProperties": {
-            "$ref": "#/definitions/WarpResulutionPath"
-          },
-          "type": "object"
         },
         "title": {
           "$ref": "#/definitions/WarpText"
@@ -246,24 +246,7 @@
           ]
         },
         "destination": {
-          "additionalProperties": false,
-          "properties": {
-            "headers": {
-              "additionalProperties": {
-                "type": "string"
-              },
-              "type": "object"
-            },
-            "method": {
-              "enum": ["GET", "POST", "PUT", "DELETE"],
-              "type": "string"
-            },
-            "url": {
-              "type": "string"
-            }
-          },
-          "required": ["url"],
-          "type": "object"
+          "$ref": "#/definitions/WarpCollectDestination"
         },
         "inputs": {
           "items": {
@@ -284,7 +267,37 @@
           "$ref": "#/definitions/WarpActionType"
         }
       },
-      "required": ["type", "label", "destination"],
+      "required": ["type", "label"],
+      "type": "object"
+    },
+    "WarpCollectDestination": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/WarpCollectDestinationHttp"
+        },
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "WarpCollectDestinationHttp": {
+      "additionalProperties": false,
+      "properties": {
+        "headers": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "type": "object"
+        },
+        "method": {
+          "enum": ["GET", "POST", "PUT", "DELETE"],
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "required": ["url"],
       "type": "object"
     },
     "WarpContractAction": {
