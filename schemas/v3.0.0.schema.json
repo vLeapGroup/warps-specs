@@ -32,7 +32,7 @@
         },
         "messages": {
           "additionalProperties": {
-            "type": "string"
+            "$ref": "#/definitions/WarpText"
           },
           "type": "object"
         },
@@ -426,9 +426,19 @@
         },
         "identifier": {
           "type": "string"
+        },
+        "query": {
+          "type": ["string", "null"]
         }
       },
-      "required": ["chain", "identifier", "hash", "creator", "createdAt"],
+      "required": [
+        "chain",
+        "identifier",
+        "query",
+        "hash",
+        "creator",
+        "createdAt"
+      ],
       "type": "object"
     },
     "WarpQueryAction": {
