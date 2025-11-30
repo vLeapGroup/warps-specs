@@ -185,7 +185,91 @@
       "type": "object"
     },
     "WarpActionInputPosition": {
-      "type": "string"
+      "anyOf": [
+        {
+          "const": "receiver",
+          "type": "string"
+        },
+        {
+          "const": "value",
+          "type": "string"
+        },
+        {
+          "const": "transfer",
+          "type": "string"
+        },
+        {
+          "const": "arg:1",
+          "type": "string"
+        },
+        {
+          "const": "arg:2",
+          "type": "string"
+        },
+        {
+          "const": "arg:3",
+          "type": "string"
+        },
+        {
+          "const": "arg:4",
+          "type": "string"
+        },
+        {
+          "const": "arg:5",
+          "type": "string"
+        },
+        {
+          "const": "arg:6",
+          "type": "string"
+        },
+        {
+          "const": "arg:7",
+          "type": "string"
+        },
+        {
+          "const": "arg:8",
+          "type": "string"
+        },
+        {
+          "const": "arg:9",
+          "type": "string"
+        },
+        {
+          "const": "arg:10",
+          "type": "string"
+        },
+        {
+          "const": "data",
+          "type": "string"
+        },
+        {
+          "const": "chain",
+          "type": "string"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "const": "destination",
+          "type": "string"
+        },
+        {
+          "$ref": "#/definitions/WarpActionInputPositionAssetObject"
+        }
+      ]
+    },
+    "WarpActionInputPositionAssetObject": {
+      "additionalProperties": false,
+      "properties": {
+        "amount": {
+          "type": "string"
+        },
+        "token": {
+          "type": "string"
+        }
+      },
+      "required": ["token", "amount"],
+      "type": "object"
     },
     "WarpActionInputSource": {
       "enum": ["field", "query", "user:wallet", "hidden"],
