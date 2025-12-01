@@ -349,6 +349,9 @@
         },
         "type": {
           "$ref": "#/definitions/WarpActionType"
+        },
+        "when": {
+          "type": "string"
         }
       },
       "required": ["type", "label"],
@@ -444,6 +447,9 @@
         },
         "value": {
           "type": "string"
+        },
+        "when": {
+          "type": "string"
         }
       },
       "required": ["type", "label", "gasLimit"],
@@ -487,6 +493,9 @@
           "$ref": "#/definitions/WarpActionType"
         },
         "url": {
+          "type": "string"
+        },
+        "when": {
           "type": "string"
         }
       },
@@ -573,6 +582,9 @@
         },
         "type": {
           "$ref": "#/definitions/WarpActionType"
+        },
+        "when": {
+          "type": "string"
         }
       },
       "required": ["type", "label"],
@@ -638,6 +650,9 @@
           "$ref": "#/definitions/WarpActionType"
         },
         "value": {
+          "type": "string"
+        },
+        "when": {
           "type": "string"
         }
       },
